@@ -83,10 +83,29 @@ void tudo() {
     fclose (file);
 }
 
+//converter de maiusculo pra minusculo
+void minuscula(char *str){
+    while(*str){
+        *str = tolower(*str);
+        str++;
+    }
+}
+
 const char* remover_linha(const char* local) {
+    char controle[100];//variaveis
+
+
+    if(local == "atividades.txt"){
+        strcpy(controle, "ATIVIDADES");
+    }else if(local == "projeto.txt"){
+        strcpy(controle, "PROJETOS");
+    }else if(local == "trabalho.txt"){
+        strcpy(controle, "TRABALHOS");
+    }
+
     FILE *file = fopen(local, "r");
     if (file == NULL) {
-        printf("Nenhuma atividade encontrada.\n");
+        printf("Nenhum arquivo encontrada.\n");
         return;
     }
 
@@ -100,17 +119,24 @@ const char* remover_linha(const char* local) {
     char linha[200];
     int numero = 1, excluir;
 
-    printf("===== ATIVIDADES =====\n");
+    printf("===== %s =====\n", controle);
     while (fgets(linha, sizeof(linha), file) != NULL) {
         printf("%d - %s", numero, linha);
         numero++;
     }
     printf("======================\n");
 
+    //controle so arquivo
+    if(linha == NULL){
+        //sem funcionar nem adianta
+    }else{
+
+    }
+
     rewind(file); // Volta para o início do arquivo
 
     // Pergunta ao usuário qual atividade excluir
-    printf("Digite o número da atividade que deseja excluir: ");
+    printf("Digite o número que você deseja excluir: ");
     scanf("%d", &excluir);
 
     numero = 1;
@@ -128,7 +154,10 @@ const char* remover_linha(const char* local) {
     remove(local);
     rename("temp.txt", local);
 
-    printf("Atividade removida com sucesso!\n");
+    //converter
+    minuscula(controle);
+
+    printf("%s removida com sucesso!\n", controle);
 }
 
 void atividade() {
@@ -200,7 +229,7 @@ void trabalho() {
     }
 
     //salvar no arquivo
-    fprintf(file, "Materia: %s. Tipo: %s. Assunto: %s. Data de entrega: %s",trabalho_materia, trabalho_tipo, trabalho, dia);
+    fprintf(file, "Materia: %s. Tipo: %s. Assunto: %s. Data de entrega: %s\n",trabalho_materia, trabalho_tipo, trabalho, dia);
 
     //fechar arquivo
     fclose(file);
