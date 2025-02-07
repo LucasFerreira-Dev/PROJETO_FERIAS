@@ -94,7 +94,6 @@ void minuscula(char *str){
 const char* remover_linha(const char* local) {
     char controle[100];//variaveis
 
-
     if(local == "atividades.txt"){
         strcpy(controle, "ATIVIDADES");
     }else if(local == "projeto.txt"){
@@ -107,6 +106,13 @@ const char* remover_linha(const char* local) {
     if (file == NULL) {
         printf("Nenhum arquivo encontrada.\n");
         return;
+    }
+
+    //controle de arquivo, saber se ele possui algo para apagar
+    if(file == NULL){
+        printf("Não possui nada paara ser apagado");
+        fclose(file);
+        exit(0);
     }
 
     FILE *temp = fopen("temp.txt", "w"); // Arquivo temporário
@@ -125,13 +131,6 @@ const char* remover_linha(const char* local) {
         numero++;
     }
     printf("======================\n");
-
-    //controle so arquivo
-    if(linha == NULL){
-        //sem funcionar nem adianta
-    }else{
-
-    }
 
     rewind(file); // Volta para o início do arquivo
 
