@@ -107,14 +107,7 @@ const char* remover_linha(const char* local) {
         printf("Nenhum arquivo encontrada.\n");
         return;
     }
-
-    //controle de arquivo, saber se ele possui algo para apagar
-    if(file == NULL){
-        printf("Não possui nada paara ser apagado");
-        fclose(file);
-        exit(0);
-    }
-
+    
     FILE *temp = fopen("temp.txt", "w"); // Arquivo temporário
     if (temp == NULL) {
         printf("Erro ao criar arquivo temporário.\n");
@@ -131,6 +124,15 @@ const char* remover_linha(const char* local) {
         numero++;
     }
     printf("======================\n");
+
+    //controle de arquivo, saber se ele possui algo para apagar
+    if (numero == 1) { // Arquivo está vazio
+        printf("O arquivo está vazio, nada para excluir.\n");
+        fclose(file);
+        fclose(temp);
+        remove("temp.txt");
+        return;
+    }
 
     rewind(file); // Volta para o início do arquivo
 
