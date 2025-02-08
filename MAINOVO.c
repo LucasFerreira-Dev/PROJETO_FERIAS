@@ -3,6 +3,14 @@
 #include <string.h>
 #include <stdlib.h>
 
+//converter de maiusculo pra minusculo
+void minuscula(char *str){
+    while(*str){
+        *str = tolower(*str);
+        str++;
+    }
+}
+
 //funções cores
 const char* red(const char* texto){
     static char color[100];
@@ -31,18 +39,20 @@ void escrever() {
     //variaveis
     char materia[100];
     char atividade[100];
-    char entrega[8];
+    char entrega[10];
 
     printf("Digite a matéria:\n");
-    getchar(); // Limpa o buffer antes de leitura
-    scanf("%[^\n]", materia);
-    getchar(); // Limpa o buffer após leitura
-    printf("Digite qual seré a atividade:\n");
-    scanf("%[^\n]", atividade);
-    getchar(); // Limpa o buffer após leitura
+    fflush(stdin);// geito correto de limpar o buffer
+    fgets(materia, sizeof(materia), stdin);
+    materia[strcspn(materia, "\n")] = 0; // Remove o '\n'
+
+    printf("Digite qual será a atividade:\n");
+    fgets(atividade, sizeof(atividade), stdin);
+    atividade[strcspn(atividade, "\n")] = 0;
+
     printf("Digite o dia de entrega:\n");
-    scanf("%[^\n]", entrega);
-    getchar(); // Limpa o buffer após leitura
+    fgets(entrega, sizeof(entrega), stdin);
+    entrega[strcspn(entrega, "\n")] = 0;
 
     FILE *file;
     file = fopen("atividades.txt", "a");
@@ -52,7 +62,7 @@ void escrever() {
         return;
     }
 
-    fprintf(file, "Matéria: %s Atividade: %s Entrega: %s \n", materia, atividade, entrega);
+    fprintf(file, "Matéria: %s. Atividade: %s. Entrega: %s. \n", materia, atividade, entrega);
     fclose(file);
     printf("Atividade salva com sucesso!\n");
 }
@@ -83,22 +93,15 @@ void tudo() {
     fclose (file);
 }
 
-//converter de maiusculo pra minusculo
-void minuscula(char *str){
-    while(*str){
-        *str = tolower(*str);
-        str++;
-    }
-}
-
+//remove linha
 const char* remover_linha(const char* local) {
     char controle[100];//variaveis
 
-    if(local == "atividades.txt"){
+    if(strcmp(local , "atividades.txt") == 0){
         strcpy(controle, "ATIVIDADES");
-    }else if(local == "projeto.txt"){
+    }else if(strcmp(local, "projeto.txt") == 0){
         strcpy(controle, "PROJETOS");
-    }else if(local == "trabalho.txt"){
+    }else if(strcmp(local, "trabalho.txt") == 0){
         strcpy(controle, "TRABALHOS");
     }
 
@@ -202,22 +205,21 @@ void trabalho() {
 
     //entradas
     printf("Digite a matéria do seu trabalho:\n");
-    getchar();
-    scanf("%[^\n]", trabalho_materia);
-    getchar();
+    fflush(stdin);//limpar buffer
+    fgets(trabalho_materia, sizeof(trabalho_materia), stdin);
+    trabalho_materia[strcspn(trabalho_materia, "\n")] = 0; //remove o \n
 
     printf("Digite o tipo de trabalho:\n");
-    getchar();
-    scanf("%[^\n]", trabalho_tipo);
-    getchar();
+    fgets(trabalho_tipo, sizeof(trabalho_tipo), stdin);
+    trabalho_tipo[strcspn(trabalho_tipo, "\n")] = 0; //remove o \n
 
     printf("Digite qual é o assunto do seu trabalho:\n");
-    scanf("%[^\n]", trabalho);
-    getchar();
+    fgets(trabalho, sizeof(trabalho), stdin);
+    trabalho[strcspn(trabalho, "\n")] = 0; //remove o \n
 
     printf("Digite a data do seu trabalho:\n");
-    scanf("%[^\n]", dia);
-    getchar();
+    fgets(dia, sizeof(dia), stdin);
+    dia[strcspn(dia, "\n")] = 0; //remove o \name
 
     //ponteiro
     FILE *file;
