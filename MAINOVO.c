@@ -31,68 +31,6 @@ const char* blue(const char* texto){
 }
 //fim das funções cores
 
-// Funções de atividades
-void escrever() {
-    //limpar cmd
-    system("cls");
-
-    //variaveis
-    char materia[100];
-    char atividade[100];
-    char entrega[10];
-
-    printf("Digite a matéria:\n");
-    fflush(stdin);// geito correto de limpar o buffer
-    fgets(materia, sizeof(materia), stdin);
-    materia[strcspn(materia, "\n")] = 0; // Remove o '\n'
-
-    printf("Digite qual será a atividade:\n");
-    fgets(atividade, sizeof(atividade), stdin);
-    atividade[strcspn(atividade, "\n")] = 0;
-
-    printf("Digite o dia de entrega:\n");
-    fgets(entrega, sizeof(entrega), stdin);
-    entrega[strcspn(entrega, "\n")] = 0;
-
-    FILE *file;
-    file = fopen("atividades.txt", "a");
-
-    if (file == NULL) {
-        printf("Erro ao abrir o arquivo.\n");
-        return;
-    }
-
-    fprintf(file, "Matéria: %s. Atividade: %s. Entrega: %s. \n", materia, atividade, entrega);
-    fclose(file);
-    printf("Atividade salva com sucesso!\n");
-}
-
-void tudo() {
-    //limpar cmd
-    system("cls");
-
-    //variaveis
-    char linha[200];
-    int numero = 1;
-
-    FILE *file;
-    file = fopen("atividades.txt", "r");
-
-    if (file == NULL) {
-        printf("Nenhuma atividade encontrada.\n");
-        return;
-    }
-
-    printf("===== ATIVIDADES =====\n");
-    while (fgets(linha, sizeof(linha), file) != NULL) {
-        printf("%d - %s", numero, linha);
-        numero++;
-    }
-    printf("======================\n");
-
-    fclose (file);
-}
-
 //remove linha
 const char* remover_linha(const char* local) {
     char controle[100];//variaveis
@@ -164,12 +102,75 @@ const char* remover_linha(const char* local) {
     printf("%s removida com sucesso!\n", controle);
 }
 
+// Funções de atividades
+void escrever() {
+    //limpar cmd
+    system("cls");
+
+    //variaveis
+    char materia[100];
+    char atividade[100];
+    char entrega[10];
+
+    printf("Digite a matéria:\n");
+    fflush(stdin);// geito correto de limpar o buffer
+    fgets(materia, sizeof(materia), stdin);
+    materia[strcspn(materia, "\n")] = 0; // Remove o '\n'
+
+    printf("Digite qual será a atividade:\n");
+    fgets(atividade, sizeof(atividade), stdin);
+    atividade[strcspn(atividade, "\n")] = 0;
+
+    printf("Digite o dia de entrega:\n");
+    fgets(entrega, sizeof(entrega), stdin);
+    entrega[strcspn(entrega, "\n")] = 0;
+
+    FILE *file;
+    file = fopen("atividades.txt", "a");
+
+    if (file == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return;
+    }
+
+    fprintf(file, "Matéria: %s. Atividade: %s. Entrega: %s. \n", materia, atividade, entrega);
+    fclose(file);
+    printf("Atividade salva com sucesso!\n");
+}
+
+void tudo() {
+    //limpar cmd
+    system("cls");
+
+    //variaveis
+    char linha[200];
+    int numero = 1;
+
+    FILE *file;
+    file = fopen("atividades.txt", "r");
+
+    if (file == NULL) {
+        printf("Nenhuma atividade encontrada.\n");
+        return;
+    }
+
+    printf("===== ATIVIDADES =====\n");
+    while (fgets(linha, sizeof(linha), file) != NULL) {
+        printf("%d - %s", numero, linha);
+        numero++;
+    }
+    printf("======================\n");
+
+    fclose (file);
+}
+
 void atividade() {
     //limpar cmd
     system("cls");
 
     char esc;
     while (1) {
+        printf("%s",blue("Mensagem:\nTudo ja pronto:\n"));
         printf("\nMENU\n\t1. Escrever nova atividade\n\t2. Mostrar todas as atividades\n\t3. Remover atividades\n\t4. Sair\nOpção: ");
         scanf(" %c", &esc);
 
@@ -275,6 +276,7 @@ void menu_trabalho(){
     char esc;
 
     while (1) {
+        printf("%s",blue("Mensagem:\nTudo ja pronto:\n"));
     	printf("\n==========MENU DO TRABALHO==========");
         printf("\nMENU\n\t1. Escrever novo trabalho\n\t2. Mostrar todos os trabalhos\n\t3. Remover trabalho\n\t4. Sair\nOpção: ");
         scanf(" %c", &esc);
@@ -303,25 +305,32 @@ void projeto() {
     //limpar cmd
     system("cls");
 
-    printf("%s", yellow("Ainda com erros.\n"));
+    printf("%s", yellow("Ainda com erros.\nFalta fazer o mostrar menu\nApagar projeto\n"));
 
     //variaveis
+    char lider[100];
     char materia[100];
     char funsao[100];
     char dia[100];
 
     //entada
-    printf("Digite qual é a materia do projeto:\n");
-    getchar();//limpar buffe
-    scanf("%[ˆ\n]", materia);
-    getchar();//limpar buffe
-    printf("Digite sua função no projeto:\n");
-    scanf("%[ˆ\n]", funsao);
-    getchar();//limpar buffe
-    printf("Digite o dia de entrega:\n");
-    scanf("%[ˆ\n]",dia);
-    getchar();//limpar buffe
+    printf("Digite o lider do projeto:\n");
+    fflush(stdin);
+    fgets(lider, sizeof(lider), stdin);
+    lider[strcspn(lider, "\n")] = 0; //remove o \n
 
+    printf("Digite qual é a materia do projeto:\n");
+    fgets(materia, sizeof(materia), stdin);
+    materia[strcspn(materia, "\n")] = 0; //remove o \n
+    
+    printf("Digite sua função no projeto:\n");
+    fgets(funsao, sizeof(funsao), stdin);
+    funsao[strcspn(funsao, "\n")] = 0; //remove o \n
+    
+    printf("Digite o dia de entrega:\n");
+    fgets(dia, sizeof(dia), stdin);
+    dia[strcspn(dia, "\n")] = 0; //remove o \n
+    
     //ponteiro
     FILE *file;
     file = fopen("projeto.txt","a");
@@ -333,11 +342,11 @@ void projeto() {
     }
 
     //salvar arquivo
-   fprintf(file, "Materia %s. Função %s. Dia da entrega: %s\n", materia, funsao, dia);
-   printf("Tudo salvo com sucesso\n");
+    fprintf(file, "Lider %s. Materia %s. Função %s. Dia da entrega: %s\n", lider, materia, funsao, dia);
+    printf("Tudo salvo com sucesso\n");
 
-   //fechar arquivo
-   fclose(file);
+    //fechar arquivo
+    fclose(file);
 }
 
 void prova() {
