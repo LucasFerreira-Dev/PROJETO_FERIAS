@@ -1,4 +1,4 @@
-//fuções de projetos
+//fuÃ§Ãµes de projetos
 void projeto() {
     //limpar cmd
     system("cls");
@@ -6,10 +6,10 @@ void projeto() {
     printf("%s", yellow("Ainda com erros.\nFalta fazer o mostrar menu\nApagar projeto\n"));
 
     //variaveis
-    char lider[100];
-    char materia[100];
-    char funsao[100];
-    char dia[100];
+    char lider[1000];
+    char materia[1000];
+    char funsao[1000];
+    char dia[1000];
 
     //entada
     printf("Digite o lider do projeto:\n");
@@ -17,11 +17,11 @@ void projeto() {
     fgets(lider, sizeof(lider), stdin);
     lider[strcspn(lider, "\n")] = 0; //remove o \n
 
-    printf("Digite qual é a materia do projeto:\n");
+    printf("Digite qual Ã© a materia do projeto:\n");
     fgets(materia, sizeof(materia), stdin);
     materia[strcspn(materia, "\n")] = 0; //remove o \n
 
-    printf("Digite sua função no projeto:\n");
+    printf("Digite sua funÃ§Ã£o no projeto:\n");
     fgets(funsao, sizeof(funsao), stdin);
     funsao[strcspn(funsao, "\n")] = 0; //remove o \n
 
@@ -40,7 +40,7 @@ void projeto() {
     }
 
     //salvar arquivo
-    fprintf(file, "Lider %s. Materia %s. Função %s. Dia da entrega: %s\n", lider, materia, funsao, dia);
+    fprintf(file, "Lider %s. Materia %s. FunÃ§Ã£o %s. Dia da entrega: %s\n", lider, materia, funsao, dia);
     printf("Tudo salvo com sucesso\n");
 
     //fechar arquivo
