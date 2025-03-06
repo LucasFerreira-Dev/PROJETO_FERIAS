@@ -1,29 +1,70 @@
 #include <stdio.h>
+#include <locale.h>
+#include <string.h>
 #include <stdlib.h>
 #include <time.h>
-#include <locale.h>
+
+//chamar arquivos
+#include "maiusculoMinusculo.h"
+#include "cores.h"
+#include "removeLinha.h"
+#include "atividades.h"
+#include "trabalhos.h"
+#include "projetos.h"
+#include "prova.h"
+#include "mostrarTudo.h"
+#include "apagar.h"
+#include "gerarAleatorio.h"
 
 int main() {
     //lingua
-    setlocale(LC_ALL, "portuguese");
+    setlocale(LC_ALL, "Portuguese");
 
-    // Inicializa a semente do gerador de números aleatórios
-    srand(time(NULL));
+    //variaveis
+    char escolha;
 
-    // Array com alguns elementos
-    char *linguagens[] = {"Python", "C", "HTML + CSS", "JavaScript", "PHP", "Unity", "java", "MySQL"};
-    int tamanho = sizeof(linguagens) / sizeof(linguagens[0]);
+    while (1) {
+        //limpar cmd
+        system("cls");
 
-    //array de nivel
-    char *nivel[] = {"Básico", "Médio", "Avançado"};
-    int tamanhoNivel = sizeof(nivel) / sizeof(nivel[0]);
+        //menu
+        printf("\n==========%s==========", blue("PROJETO_FERIAS"));
+        printf("\nMENU PRINCIPAL\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Provas\n\t5. Mostrar tudo\n\t6. Apagar arquivo\n\t7. Salvar num arquivo\n\t9. Sair\nEscolha: ");
+        scanf(" %c", &escolha);
+        printf("\n==================================\n");
 
-    // Sorteia um índice aleatório
-    int indice = rand() % tamanho;
-    int indiceNivel = rand() % tamanhoNivel;
-
-    // Exibe o item sorteado
-    printf("Item sorteado: %s\nNivel: %s\n", linguagens[indice], nivel[indiceNivel]);
+        switch (escolha) {
+            case '1':
+                atividade();
+                break;
+            case '2':
+                menu_trabalho();
+                break;
+            case '3':
+                projeto();
+                break;
+            case '4':
+                prova();
+                break;
+            case '5':
+                mostrar_tudo();
+                break;
+            case '6':
+                apagar();
+                break;
+            case '7':
+                break;
+            case '8':
+                void gerarAtividade();
+                break;
+            case '9':
+                printf("%s\n", blue("Saindo do programa..."));
+                exit(0);
+            default:
+                printf("%s\n", red("Opção invalida. Tente novamente."));
+                break;
+        }
+    }
 
     return 0;
 }
