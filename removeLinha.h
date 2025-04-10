@@ -8,6 +8,8 @@ const char* remover_linha(const char* local) {
         strcpy(controle, "PROJETOS");
     }else if(strcmp(local, "trabalho.txt") == 0){
         strcpy(controle, "TRABALHOS");
+    }else if(strcmp(local, "desafiolinguagem.txt") == 0){
+        strcpy(controle, "LINGUAGENS e FERRAMENTAS");
     }
 
     FILE *file = fopen(local, "r");
@@ -16,9 +18,9 @@ const char* remover_linha(const char* local) {
         return;
     }
 
-    FILE *temp = fopen("temp.txt", "w"); // Arquivo temporário
+    FILE *temp = fopen("temp.txt", "w"); // Arquivo temporario
     if (temp == NULL) {
-        printf("Erro ao criar arquivo temporário.\n");
+        printf("Erro ao criar arquivo temporario.\n");
         fclose(file);
         return;
     }
@@ -34,24 +36,24 @@ const char* remover_linha(const char* local) {
     printf("======================\n");
 
     //controle de arquivo, saber se ele possui algo para apagar
-    if (numero == 1) { // Arquivo está vazio
-        printf("O arquivo está vazio, nada para excluir.\n");
+    if (numero == 1) { // Arquivo estÃ¡ vazio
+        printf("O arquivo estÃ¡ vazio, nada para excluir.\n");
         fclose(file);
         fclose(temp);
         remove("temp.txt");
         return;
     }
 
-    rewind(file); // Volta para o início do arquivo
+    rewind(file); // Volta para o inicio do arquivo
 
-    // Pergunta ao usuário qual atividade excluir
-    printf("Digite o número que você deseja excluir: ");
+    // Pergunta ao usuÃ¡rio qual atividade excluir
+    printf("Digite o nÃºmero que vocÃª deseja excluir: ");
     scanf("%d", &excluir);
 
     numero = 1;
     while (fgets(linha, sizeof(linha), file) != NULL) {
         if (numero != excluir) {
-            fputs(linha, temp); // Copia todas as linhas, exceto a que será excluída
+            fputs(linha, temp); // Copia todas as linhas, exceto a que serï¿½ excluï¿½da
         }
         numero++;
     }
@@ -59,7 +61,7 @@ const char* remover_linha(const char* local) {
     fclose(file);
     fclose(temp);
 
-    // Substituir o arquivo original pelo temporário
+    // Substituir o arquivo original pelo temporï¿½rio
     remove(local);
     rename("temp.txt", local);
 

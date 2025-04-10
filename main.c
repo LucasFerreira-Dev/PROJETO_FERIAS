@@ -14,7 +14,7 @@
 #include "prova.h"
 #include "mostrarTudo.h"
 #include "apagar.h"
-#include "gerarAleatorio.h"
+#include "desafioLinguagem.h"
 
 int main() {
     //lingua
@@ -29,7 +29,7 @@ int main() {
 
         //menu
         printf("\n==========%s==========", blue("PROJETO_FERIAS"));
-        printf("\nMENU PRINCIPAL\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Provas\n\t5. Mostrar tudo\n\t6. Apagar arquivo\n\t7. Salvar num arquivo\n\t9. Sair\nEscolha: ");
+        printf("\nMENU PRINCIPAL\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Provas\n\t5. Mostrar tudo\n\t6. Apagar arquivo\n\t7. Salvar num arquivo\n\t8. Sortear uma atividade de treino\n\t9. Sair\nEscolha: ");
         scanf(" %c", &escolha);
         printf("\n==================================\n");
 
@@ -55,13 +55,13 @@ int main() {
             case '7':
                 break;
             case '8':
-                void gerarAtividade();
+                menuDesafioLinguagem();
                 break;
             case '9':
                 printf("%s\n", blue("Saindo do programa..."));
                 exit(0);
             default:
-                printf("%s\n", red("Opção invalida. Tente novamente."));
+                printf("%s\n", red("OpÃ§Ã£o invalida. Tente novamente."));
                 break;
         }
     }
