@@ -12,37 +12,54 @@ void apagar(){
     scanf("%s", senha);
 
     if (strcmp(senha, "seuburro") == 0) {
-        printf("MENU APAGAR\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Sair\nOp��o: ");
+        printf("MENU APAGAR\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Provas\n\t5. Sair\nOpção: ");
         scanf("%1s", escolha);
 
         // Switch para selecionar a opçãoo
         switch (escolha[0]) {
             case '1':
                 if(remove("atividades.txt") == 0){
-                    printf("Arquivo apagado com suceso.\ n");
+                    printf("Arquivo apagado com suceso.\n");
+                    sleep(1);  // pausa de 2 segundos
                 }else{
                     printf("Erro ao apagar.\n");
+                    sleep(1);  // pausa de 2 segundos
                     break;
                 }
             case '2':
                 if(remove("trabalho.txt") == 0){
-                    printf("Arquivo apagado com suceso.\ n");
+                    printf("Arquivo apagado com suceso.\n");
+                    sleep(1);  // pausa de 2 segundos
                 }else{
                     printf("Erro ao apagar.\n");
+                    sleep(1);  // pausa de 2 segundos
                     break;
                 }
             case '3':
                 if(remove("projeto.txt") == 0){
-                    printf("Arquivo apagado com suceso.\ n");
+                    printf("Arquivo apagado com suceso.\n");
+                    sleep(1);  // pausa de 2 segundos
                 }else{
                     printf("Erro ao apagar.\n");
+                    sleep(1);  // pausa de 2 segundos
                     break;
                 }
             case '4':
+                if(remove("prova.txt") == 0){
+                    printf("Arquivo apagado com suceso.\n");
+                    sleep(1);  // pausa de 2 segundos
+                }else{
+                    printf("Erro ao apagar.\n");
+                    sleep(1);  // pausa de 2 segundos
+                    break;
+                }
+            case '5':
                 printf("%s\n", blue("Saindo..."));
+                sleep(1);  // pausa de 2 segundos
                 return ;
             default:
                 printf("%s" ,red("Opçãoo invalida\n"));
+                sleep(1);  // pausa de 2 segundos
                 return;
         }
 

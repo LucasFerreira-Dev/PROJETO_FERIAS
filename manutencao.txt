@@ -1,0 +1,6 @@
+acho que tem erros:
+6 apagar arquivo
+5 mostrar tudo
+
+vai refazer:
+7 salvar num arquivo

@@ -1,3 +1,0 @@
-Tipo: Av1. Materia: sei la. Local: online. Dia: amanha
-Tipo: Av1. Materia: calculo. Local: online. Dia: 13
-Tipo: Av2. Materia: POO. Local: presencial. Dia: hoje
