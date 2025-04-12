@@ -1,5 +1,5 @@
 //fuções de projetos
-void projeto() {
+void escreverProjeto() {
     //limpar cmd
     system("cls");
 
@@ -45,4 +45,60 @@ void projeto() {
 
     //fechar arquivo
     fclose(file);
+}
+
+void mostrarProjetos(){
+    //limpar cmd
+    system("cls");
+
+    //variaveis
+    char linha[200];
+    int numero = 1;
+
+    //abrir arquivo
+    FILE *file = fopen("projeto.txt", "r");
+
+    if (file == NULL){
+        printf("Nenhuma atividade encontrada.\n");
+        return;
+    }
+
+    printf("======= Projetos =====\n");
+    while (fgets(linha, sizeof(linha), file) != NULL) {
+        printf("%d - %s", numero, linha);
+        numero++;
+    }
+    printf("======================\n");
+
+    fclose (file);
+}
+
+void menuProjeto(){
+    //limpar cmd
+    system("cls");
+
+    char esc;
+    while (1) {
+        printf("%s",blue("Mensagem:\nTudo ja pronto:\n"));
+        printf("\nMENU\n\t1. Escrever um novo projeto\n\t2. Mostrar todos os projetos\n\t3. Remover projetos finalizados\n\t4. Sair\nOpção: ");
+        scanf(" %c", &esc);
+
+        switch (esc) {
+            case '1':
+                escreverProjeto();
+                break;
+            case '2':
+                mostrarProjetos();
+                break;
+            case '3':
+                remover_linha("projeto.txt");
+                break;
+            case '4':
+                return;//sair
+            default:
+                printf("%s\n", red("Opção invalida. Tente novamente.\n"));
+                sleep(1);  // pausa de 2 segundos
+                break;
+        }
+    }
 }

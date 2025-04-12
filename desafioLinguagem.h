@@ -143,7 +143,8 @@ void menuDesafioLinguagem(){
             case '5':
                 return;//sair
             default:
-                printf("Opção invalida. Tente novamente.\n");
+                printf("%s\n", red("Opção invalida. Tente novamente."));
+                sleep(1);  // pausa de 2 segundos
                 break;
         }
     }

@@ -100,7 +100,8 @@ void menu_trabalho(){
             case '4':
                 return;
             default:
-                printf("Opção invalida. Tente novamente.\n");
+                printf("%s\n", red("Opção invalida. Tente novamente."));
+                sleep(1);  // pausa de 2 segundos
                 break;
         }
     }

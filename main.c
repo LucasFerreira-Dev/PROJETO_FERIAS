@@ -41,7 +41,7 @@ int main() {
                 menu_trabalho();
                 break;
             case '3':
-                projeto();
+                menuProjeto();
                 break;
             case '4':
                 prova();
@@ -62,6 +62,7 @@ int main() {
                 exit(0);
             default:
                 printf("%s\n", red("Opção invalida. Tente novamente."));
+                sleep(1);  // pausa de 2 segundos
                 break;
         }
     }

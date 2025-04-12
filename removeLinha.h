@@ -61,7 +61,7 @@ const char* remover_linha(const char* local) {
     fclose(file);
     fclose(temp);
 
-    // Substituir o arquivo original pelo tempor�rio
+    // Substituir o arquivo original pelo tempororio
     remove(local);
     rename("temp.txt", local);
 

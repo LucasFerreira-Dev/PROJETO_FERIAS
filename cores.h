@@ -1,4 +1,4 @@
-//funções cores
+//funÃ§Ãµes cores
 const char* red(const char* texto){
     static char color[100];
     snprintf(color, sizeof(color), "\033[31m%s\033[0m",  texto);

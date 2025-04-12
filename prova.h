@@ -2,5 +2,5 @@ void prova() {
     //limpar cmd
     system("cls");
 
-    printf("Função de provas.\n");
+    printf("FunÃ§Ã£o de provas.\n");
 }
