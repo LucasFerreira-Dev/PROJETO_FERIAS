@@ -33,7 +33,7 @@ void escreverDesafioLinguagem() {
 
     //fechar o arquivo
     fclose(file);
-    printf("Atividade salva com sucesso!\n");
+    printf("Linguagens salva com sucesso!\n");
 
 }
 

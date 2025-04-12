@@ -59,7 +59,7 @@ void mostrarProjetos(){
     FILE *file = fopen("projeto.txt", "r");
 
     if (file == NULL){
-        printf("Nenhuma atividade encontrada.\n");
+        printf("Nenhuma projeto encontrada.\n");
         return;
     }
 

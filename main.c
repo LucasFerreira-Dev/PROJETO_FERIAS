@@ -44,7 +44,7 @@ int main() {
                 menuProjeto();
                 break;
             case '4':
-                prova();
+                menuProva();
                 break;
             case '5':
                 mostrar_tudo();
