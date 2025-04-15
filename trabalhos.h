@@ -98,6 +98,8 @@ void menu_trabalho(){
                 remover_linha("trabalho.txt");
                 break;
             case '4':
+                printf("%s\n", blue("Saindo do programa..."));
+                sleep(1);  // pausa de 2 segundos
                 return;
             default:
                 printf("%s\n", red("Opção invalida. Tente novamente."));

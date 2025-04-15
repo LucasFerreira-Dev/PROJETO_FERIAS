@@ -23,8 +23,12 @@ void escreverProva() {
     
     //logica
     printf("Quantas provas serão adicionadas: ");
-    scanf("%d", &quantidade);
-    fflush(stdin);
+    while(scanf("%d", &quantidade) != 1){
+        printf("Quantas provas serão adicionadas: ");
+        while(getchar() != '\n'); //limpar buffer
+    }
+
+    fflush(stdin); //limpar buffer
 
     for(int i = 0; i < quantidade; i++){
         //limpar cmd
@@ -103,6 +107,8 @@ void menuProva() {
                 remover_linha("prova.txt");
                 break;
             case '4':
+                printf("%s\n", blue("Saindo do programa..."));
+                sleep(1);  // pausa de 2 segundos
                 return;//sair
             default:
                 printf("%s\n", red("Opção invalida. Tente novamente."));

@@ -40,7 +40,7 @@ void escreverProjeto() {
     }
 
     //salvar arquivo
-    fprintf(file, "Lider %s. Materia %s. Função %s. Dia da entrega: %s\n", lider, materia, funsao, dia);
+    fprintf(file, "Lider: %s. Materia: %s. Função: %s. Dia da entrega: %s\n", lider, materia, funsao, dia);
     printf("Tudo salvo com sucesso\n");
 
     //fechar arquivo
@@ -94,6 +94,8 @@ void menuProjeto(){
                 remover_linha("projeto.txt");
                 break;
             case '4':
+                printf("%s\n", blue("Saindo do programa..."));
+                sleep(1);  // pausa de 2 segundos
                 return;//sair
             default:
                 printf("%s\n", red("Opção invalida. Tente novamente.\n"));

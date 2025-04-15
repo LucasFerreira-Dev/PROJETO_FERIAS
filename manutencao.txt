@@ -4,3 +4,9 @@ acho que tem erros:
 
 vai refazer:
 7 salvar num arquivo
+
+ja resolvidos:
+    1. bugs de buffer no 4. provas e no 8. sortear atividades ✅
+    2. conferir se todos os menus se possui ⬇️ ✅
+                    printf("%s\n", blue("Saindo do programa..."));
+                    sleep(1);  // pausa de 2 segundos

@@ -23,14 +23,34 @@ int main() {
     //variaveis
     char escolha;
 
+    //oração
+    /*
+        Pai Nosso que estais no Ceus,
+        Santificado seja o Vosso Console,
+        Venha a nós o Vosso Array,
+        Seja feita a Vossa vontade
+        Assim no backend como no front.
+
+        O código nosso de cada dia nos compile hoje,
+        Perdoai nossas exceções
+        Assim como nós tratamos quem nos deu bug,
+        E não vos deixei cair em deploy na sexta,
+        Mas livrai-nos do rollback.
+
+        Amém 🙏💻
+    */
+
+
     while (1) {
         //limpar cmd
         system("cls");
 
         //menu
         printf("\n==========%s==========", blue("PROJETO_FERIAS"));
-        printf("\nMENU PRINCIPAL\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Provas\n\t5. Mostrar tudo\n\t6. Apagar arquivo\n\t7. Salvar num arquivo\n\t8. Sortear uma atividade de treino\n\t9. Sair\nEscolha: ");
+        printf("\nMENU PRINCIPAL\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Provas\n\t5. Vou reorganizar ou refazer\n\t6. Apagar arquivo\n\t7. Salvar e recuperar backup\n\t8. Sortear uma atividade de treino\n\t9. Sair\nEscolha: ");
         scanf(" %c", &escolha);
+        fflush(stdin); //limpar buffer
+
         printf("\n==================================\n");
 
         switch (escolha) {
@@ -53,12 +73,15 @@ int main() {
                 apagar();
                 break;
             case '7':
+                printf("%s", red("Simplismente nao existe\nCom erro ate o talo"));
+                sleep(1);
                 break;
             case '8':
                 menuDesafioLinguagem();
                 break;
             case '9':
                 printf("%s\n", blue("Saindo do programa..."));
+                sleep(2);  // pausa de 2 segundos
                 exit(0);
             default:
                 printf("%s\n", red("Opção invalida. Tente novamente."));

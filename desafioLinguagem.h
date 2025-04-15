@@ -18,9 +18,13 @@ void escreverDesafioLinguagem() {
     }
 
     //logica
-    printf("Quantas linguagens de programação e ferramentas serao adicionadas: ");
-    scanf("%d", &quantidade);
-    fflush(stdin);
+    printf("Quantas linguagens de programação e ferramentas serão adicionadas: ");
+    while(scanf("%d", &quantidade) != 1){
+        printf("Quantas linguagens de programação e ferramentas serão adicionadas: ");
+        while(getchar() != '\n'); //limpar buffer
+    }
+
+    fflush(stdin); //limpar buffer
 
     for(int i = 0; i < quantidade; i++){
         printf("Digite a linguagem %d: ", i + 1);
@@ -141,6 +145,8 @@ void menuDesafioLinguagem(){
                 sortearDesafioLinguagem();
                 break;
             case '5':
+                printf("%s\n", blue("Saindo do programa..."));
+                sleep(1);  // pausa de 2 segundos
                 return;//sair
             default:
                 printf("%s\n", red("Opção invalida. Tente novamente."));

@@ -2,6 +2,10 @@ void mostrar_tudo() {
     //limpar cmd
     system("cls");
 
+    //mensagem
+    printf("%s", yellow("Manutencao extrema\nVou refazer a logica de tudo aqui do inicio\n"));
+    sleep(2);
+    
     //variaveis
     char linha[200];
     char deque[3][20] = {"ATIVIDADES","TRABALHOS", "PROJETOS"};

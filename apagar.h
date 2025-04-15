@@ -2,6 +2,9 @@ void apagar(){
     //limpar cmd
     system("cls");
 
+    //mensagem
+    printf("%s", yellow("Irei fazer uma manutencao preventiva\n"));
+
     // Variaveis
     char escolha[2];
     char arquivo[20];

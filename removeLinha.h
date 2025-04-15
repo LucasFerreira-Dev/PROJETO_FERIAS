@@ -53,7 +53,7 @@ const char* remover_linha(const char* local) {
     numero = 1;
     while (fgets(linha, sizeof(linha), file) != NULL) {
         if (numero != excluir) {
-            fputs(linha, temp); // Copia todas as linhas, exceto a que ser� exclu�da
+            fputs(linha, temp); // Copia todas as linhas, exceto a que será excluida
         }
         numero++;
     }
