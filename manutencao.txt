@@ -1,5 +1,4 @@
 acho que tem erros:
-6 apagar arquivo
 5 mostrar tudo
 
 vai refazer:
@@ -10,3 +9,4 @@ ja resolvidos:
     2. conferir se todos os menus se possui ⬇️ ✅
                     printf("%s\n", blue("Saindo do programa..."));
                     sleep(1);  // pausa de 2 segundos
+    3. corrigindo a chanse de bug no apagar.h
