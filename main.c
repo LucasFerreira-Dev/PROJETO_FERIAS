@@ -74,14 +74,13 @@ int main() {
                 break;
             case '7':
                 printf("%s", red("Simplismente nao existe\nCom erro ate o talo"));
-                sleep(1);
                 break;
             case '8':
                 menuDesafioLinguagem();
                 break;
             case '9':
                 printf("%s\n", blue("Saindo do programa..."));
-                sleep(2);  // pausa de 2 segundos
+                sleep(1);  // pausa de 2 segundos
                 exit(0);
             default:
                 printf("%s\n", red("Opção invalida. Tente novamente."));

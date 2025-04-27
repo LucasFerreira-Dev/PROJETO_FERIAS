@@ -1,6 +1,0 @@
-JavaScripty
-Flask
-Calculo I
-Unity - Script
-DIO BOOTCAMP - Java
-Desner site de conversao
