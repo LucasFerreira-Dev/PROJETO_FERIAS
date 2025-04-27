@@ -23,49 +23,48 @@ void apagar(){
             case '1':
                 if(remove("atividades.txt") == 0){
                     printf("Arquivo apagado com suceso.\n");
-                    sleep(1);  // pausa de 2 segundos
-                }else{
+                } else {
                     printf("Erro ao apagar.\n");
-                    sleep(1);  // pausa de 2 segundos
-                    break;
                 }
+                //controle
+                sleep(1);  // pausa de 2 segundos
+                break;
             case '2':
-                if(remove("trabalho.txt") == 0){
+                if(remove("trabalho.txt") == 0) {
                     printf("Arquivo apagado com suceso.\n");
-                    sleep(1);  // pausa de 2 segundos
-                }else{
+                } else {
                     printf("Erro ao apagar.\n");
-                    sleep(1);  // pausa de 2 segundos
-                    break;
                 }
+                //controle
+                sleep(1);  // pausa de 2 segundos
+                break;
             case '3':
                 if(remove("projeto.txt") == 0){
                     printf("Arquivo apagado com suceso.\n");
-                    sleep(1);  // pausa de 2 segundos
-                }else{
+                } else {
                     printf("Erro ao apagar.\n");
-                    sleep(1);  // pausa de 2 segundos
-                    break;
                 }
+                //controle
+                sleep(1);  // pausa de 2 segundos
+                break;
             case '4':
                 if(remove("prova.txt") == 0){
                     printf("Arquivo apagado com suceso.\n");
-                    sleep(1);  // pausa de 2 segundos
-                }else{
+                } else {
                     printf("Erro ao apagar.\n");
-                    sleep(1);  // pausa de 2 segundos
-                    break;
                 }
+                //controle
+                sleep(1);  // pausa de 2 segundos
+                break;
             case '5':
                 printf("%s\n", blue("Saindo..."));
                 sleep(1);  // pausa de 2 segundos
                 return ;
             default:
-                printf("%s" ,red("Opçãoo invalida\n"));
+                printf("%s" ,red("Opção invalida\n"));
                 sleep(1);  // pausa de 2 segundos
                 return;
         }
-
     }else{
         printf("%s\n", red("Senha incorreta:"));
     }

@@ -23,8 +23,9 @@ int main() {
     //variaveis
     char escolha;
 
-    //oração
     /*
+        oração contra os males do nosso santo dia:
+        
         Pai Nosso que estais no Ceus,
         Santificado seja o Vosso Console,
         Venha a nós o Vosso Array,
