@@ -38,7 +38,7 @@ int main() {
         E não vos deixei cair em deploy na sexta,
         Mas livrai-nos do rollback.
 
-        Amém. 🙏💻
+        A main. 🙏💻
     */
 
 
