@@ -1,3 +1,5 @@
+erros de portugues quebrado usar:ISO 8859-1
+
 acho que tem erros:
 5 mostrar tudo
 

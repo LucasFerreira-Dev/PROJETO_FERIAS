@@ -1,4 +1,4 @@
-void escreverProva() {
+void EscreverProva() {
     //limpar cmd
     system("cls");
 
@@ -15,16 +15,16 @@ void escreverProva() {
     //abrir o arquivo
     FILE *file = fopen("prova.txt","a");
 
-    //verifica√ß√£o
+    //verificaÁ„o
     if (file == NULL){
         printf("Erro ao abrir o arquivo.\n");
         return;
     }
     
     //logica
-    printf("Quantas provas ser√£o adicionadas: ");
+    printf("Quantas provas ser„o adicionadas: ");
     while(scanf("%d", &quantidade) != 1){
-        printf("Quantas provas ser√£o adicionadas: ");
+        printf("Quantas provas ser„o adicionadas: ");
         while(getchar() != '\n'); //limpar buffer
     }
 
@@ -34,7 +34,7 @@ void escreverProva() {
         //limpar cmd
         system("cls");
 
-        printf("Anota√ß√µes da %d prova\n", i + 1);
+        printf("AnotaÁıes da %d prova\n", i + 1);
         printf("Digite o tipo de prova: ");
         fgets(tipoProva, sizeof(tipoProva), stdin);
         tipoProva[strcspn(tipoProva, "\n")] = 0; // Remove o '\n'
@@ -47,7 +47,7 @@ void escreverProva() {
         fgets(local, sizeof(local), stdin);
         local[strcspn(local, "\n")] = 0; // Remove o '\n'
 
-        printf("Digite o dia que ser√° a prova: ");
+        printf("Digite o dia que ser· a prova: ");
         fgets(entrega, sizeof(entrega), stdin);
         entrega[strcspn(entrega, "\n")] = 0; // Remove o '\n'
 
@@ -60,7 +60,7 @@ void escreverProva() {
     printf("Provas salva com sucesso!\n");
 }
 
-void mostrarProva() {
+void MostrarProva() {
     //limpar cmd
     system("cls");
 
@@ -86,22 +86,22 @@ void mostrarProva() {
     fclose (file);
 }
 
-void menuProva() {
+void MenuProva() {
     //limpar cmd
     system("cls");
 
     char esc;
     while (1) {
         printf("%s",blue("Mensagem:\nTudo ja pronto:\n"));
-        printf("\nMENU\n\t1. Escrever nova prova\n\t2. Mostrar todas as provas\n\t3. Remover provas j√° feitas\n\t4. Sair\nOp√ß√£o: ");
+        printf("\nMENU\n\t1. Escrever nova prova\n\t2. Mostrar todas as provas\n\t3. Remover provas j· feitas\n\t4. Sair\nOpÁ„o: ");
         scanf(" %c", &esc);
 
         switch (esc) {
             case '1':
-                escreverProva();
+                EscreverProva();
                 break;
             case '2':
-                mostrarProva();
+                MostrarProva();
                 break;
             case '3':
                 remover_linha("prova.txt");
@@ -111,7 +111,7 @@ void menuProva() {
                 sleep(1);  // pausa de 2 segundos
                 return;//sair
             default:
-                printf("%s\n", red("Op√ß√£o invalida. Tente novamente."));
+                printf("%s\n", red("OpÁ„o invalida. Tente novamente."));
                 sleep(1);  // pausa de 2 segundos
                 break;
         }

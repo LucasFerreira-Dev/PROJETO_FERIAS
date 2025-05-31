@@ -1,9 +1,7 @@
-//fuÃ§Ãµes de projetos
-void escreverProjeto() {
+//fuções de projetos
+void EscreverProjeto() {
     //limpar cmd
     system("cls");
-
-    printf("%s", yellow("Ainda com erros.\nFalta fazer o mostrar menu\nApagar projeto\n"));
 
     //variaveis
     char lider[1000];
@@ -17,11 +15,11 @@ void escreverProjeto() {
     fgets(lider, sizeof(lider), stdin);
     lider[strcspn(lider, "\n")] = 0; //remove o \n
 
-    printf("Digite qual Ã© a materia do projeto:\n");
+    printf("Digite qual é a materia do projeto:\n");
     fgets(materia, sizeof(materia), stdin);
     materia[strcspn(materia, "\n")] = 0; //remove o \n
 
-    printf("Digite sua funÃ§Ã£o no projeto:\n");
+    printf("Digite sua função no projeto:\n");
     fgets(funsao, sizeof(funsao), stdin);
     funsao[strcspn(funsao, "\n")] = 0; //remove o \n
 
@@ -40,14 +38,14 @@ void escreverProjeto() {
     }
 
     //salvar arquivo
-    fprintf(file, "Lider: %s. Materia: %s. FunÃ§Ã£o: %s. Dia da entrega: %s\n", lider, materia, funsao, dia);
+    fprintf(file, "Lider: %s. Matéria: %s. Função: %s. Dia da entrega: %s\n", lider, materia, funsao, dia);
     printf("Tudo salvo com sucesso\n");
 
     //fechar arquivo
     fclose(file);
 }
 
-void mostrarProjetos(){
+void MostrarProjetos(){
     //limpar cmd
     system("cls");
 
@@ -73,22 +71,21 @@ void mostrarProjetos(){
     fclose (file);
 }
 
-void menuProjeto(){
+void MenuProjeto(){
     //limpar cmd
     system("cls");
 
     char esc;
     while (1) {
-        printf("%s",blue("Mensagem:\nTudo ja pronto:\n"));
-        printf("\nMENU\n\t1. Escrever um novo projeto\n\t2. Mostrar todos os projetos\n\t3. Remover projetos finalizados\n\t4. Sair\nOpÃ§Ã£o: ");
+        printf("\nMENU\n\t1. Escrever um novo projeto\n\t2. Mostrar todos os projetos\n\t3. Remover projetos finalizados\n\t4. Sair\nOpção: ");
         scanf(" %c", &esc);
 
         switch (esc) {
             case '1':
-                escreverProjeto();
+                EscreverProjeto();
                 break;
             case '2':
-                mostrarProjetos();
+                MostrarProjetos();
                 break;
             case '3':
                 remover_linha("projeto.txt");
@@ -98,7 +95,7 @@ void menuProjeto(){
                 sleep(1);  // pausa de 2 segundos
                 return;//sair
             default:
-                printf("%s\n", red("OpÃ§Ã£o invalida. Tente novamente.\n"));
+                printf("%s\n", red("Opção invalida. Tente novamente.\n"));
                 sleep(1);  // pausa de 2 segundos
                 break;
         }

@@ -1,5 +1,5 @@
-// FunÃ§Ãµes de atividades
-void escrever() {
+// Funções de atividades
+void EscreverAtividade() {
     //limpar cmd
     system("cls");
 
@@ -8,12 +8,12 @@ void escrever() {
     char atividade[1000];
     char entrega[1000];
 
-    printf("Digite a matÃ©ria:\n");
+    printf("Digite a matéria:\n");
     fflush(stdin);// geito correto de limpar o buffer
     fgets(materia, sizeof(materia), stdin);
     materia[strcspn(materia, "\n")] = 0; // Remove o '\n'
 
-    printf("Digite qual serÃ¡ a atividade:\n");
+    printf("Digite qual será a atividade:\n");
     fgets(atividade, sizeof(atividade), stdin);
     atividade[strcspn(atividade, "\n")] = 0;
 
@@ -29,12 +29,12 @@ void escrever() {
         return;
     }
 
-    fprintf(file, "MatÃ©ria: %s. Atividade: %s. Entrega: %s. \n", materia, atividade, entrega);
+    fprintf(file, "Matéria: %s. Atividade: %s. Entrega: %s. \n", materia, atividade, entrega);
     fclose(file);
     printf("Atividade salva com sucesso!\n");
 }
 
-void tudo() {
+void MostrarAtividades() {
     //limpar cmd
     system("cls");
 
@@ -60,22 +60,21 @@ void tudo() {
     fclose (file);
 }
 
-void atividade() {
+void MenuAtividade() {
     //limpar cmd
     system("cls");
 
     char esc;
     while (1) {
-        printf("%s",blue("Mensagem:\nTudo ja pronto:\n"));
-        printf("\nMENU\n\t1. Escrever nova atividade\n\t2. Mostrar todas as atividades\n\t3. Remover atividades\n\t4. Sair\nOpÃ§Ã£o: ");
+        printf("\nMENU\n\t1. Escrever nova atividade\n\t2. Mostrar todas as atividades\n\t3. Remover atividades\n\t4. Sair\nOpção: ");
         scanf(" %c", &esc);
 
         switch (esc) {
             case '1':
-                escrever();
+                EscreverAtividade();
                 break;
             case '2':
-                tudo();
+                MostrarAtividades();
                 break;
             case '3':
                 remover_linha("atividades.txt");
@@ -85,7 +84,7 @@ void atividade() {
                 sleep(1);  // pausa de 2 segundos
                 return;
             default:
-                printf("%s\n", red("OpÃ§Ã£o invalida. Tente novamente."));
+                printf("%s\n", red("Opção invalida. Tente novamente."));
                 sleep(1);  // pausa de 2 segundos
                 break;
         }

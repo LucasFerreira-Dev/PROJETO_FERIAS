@@ -24,21 +24,21 @@ int main() {
     char escolha;
 
     /*
-        ora√ß√£o contra os males do nosso santo dia:
+        oraÁ„o contra os males do nosso santo dia:
         
         Pai Nosso que estais no Ceus,
         Santificado seja o Vosso Console,
-        Venha a n√≥s o Vosso Array,
+        Venha a nÛs o Vosso Array,
         Seja feita a Vossa vontade
         Assim no backend como no front.
 
-        O c√≥digo nosso de cada dia nos compile hoje,
-        Perdoai nossas exce√ß√µes
-        Assim como n√≥s tratamos quem nos deu bug,
-        E n√£o vos deixei cair em deploy na sexta,
+        O cÛdigo nosso de cada dia nos compile hoje,
+        Perdoai nossas exceÁıes
+        Assim como nÛs tratamos quem nos deu bug,
+        E n„o vos deixei cair em deploy na sexta,
         Mas livrai-nos do rollback.
 
-        A main. üôèüíª
+        A main. ??
     */
 
 
@@ -46,9 +46,26 @@ int main() {
         //limpar cmd
         system("cls");
 
+        printf("ConfiguraÁ„o de cores para manutenÁıes:\n");
+        printf("%s\n", blue("Tudo certo"));
+        printf("%s\n", yellow("Com problemas, precisa de manutenÁ„o"));
+        printf("%s\n", red("N„o pega e precisa refazer"));
+
         //menu
         printf("\n==========%s==========", blue("PROJETO_FERIAS"));
-        printf("\nMENU PRINCIPAL\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Provas\n\t5. Vou reorganizar ou refazer\n\t6. Apagar arquivo\n\t7. Salvar e recuperar backup\n\t8. Sortear uma atividade de treino\n\t9. Sair\nEscolha: ");
+
+        printf("\nMENU PRINCIPAL");
+        printf("\n\t1. %s", blue("Atividades"));
+        printf("\n\t2. %s", blue("Trabalhos"));
+        printf("\n\t3. %s", blue("Projetos"));
+        printf("\n\t4. %s", blue("Provas"));
+        printf("\n\t5. %s", red("Vou reorganizar ou refazer"));
+        printf("\n\t6. %s", blue("Apagar arquivo"));
+        printf("\n\t7. %s", red("Salvar e recuperar backup"));
+        printf("\n\t8. %s", blue("Sortear uma atividade de treino"));
+        printf("\n\t9. Sair");
+        
+        printf("\nEscolha: ");
         scanf(" %c", &escolha);
         fflush(stdin); //limpar buffer
 
@@ -56,35 +73,36 @@ int main() {
 
         switch (escolha) {
             case '1':
-                atividade();
+                MenuAtividade();
                 break;
             case '2':
                 menu_trabalho();
                 break;
             case '3':
-                menuProjeto();
+                MenuProjeto();
                 break;
             case '4':
-                menuProva();
+                MenuProva();
                 break;
             case '5':
                 mostrar_tudo();
                 break;
             case '6':
-                apagar();
+                Apagar();
                 break;
             case '7':
-                printf("%s", red("Simplismente nao existe\nCom erro ate o talo"));
+                printf("%s", red("Simplismente n„o existe\nCom erro atÈ o talo"));
+                sleep(2);
                 break;
             case '8':
-                menuDesafioLinguagem();
+                MenuDesafioLinguagem();
                 break;
             case '9':
                 printf("%s\n", blue("Saindo do programa..."));
                 sleep(1);  // pausa de 2 segundos
                 exit(0);
             default:
-                printf("%s\n", red("Op√ß√£o invalida. Tente novamente."));
+                printf("%s\n", red("OpÁ„o invalida. Tente novamente."));
                 sleep(1);  // pausa de 2 segundos
                 break;
         }

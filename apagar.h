@@ -1,4 +1,4 @@
-void apagar(){
+void Apagar(){
     //limpar cmd
     system("cls");
 
@@ -6,15 +6,14 @@ void apagar(){
     char escolha[2];
     char senha[20];
 
-    printf("%s",blue("Mensagem:\nTudo ja pronto:\n"));
     printf("Para poder ter acesso primeiro digite a senha:\n");
     scanf("%19s", senha);
 
     if (strcmp(senha, "seuburro") == 0) {
-        printf("MENU APAGAR\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Provas\n\t5. Sair\nOpÃ§Ã£o: ");
+        printf("MENU APAGAR\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Provas\n\t5. Sair\nOpção: ");
         scanf("%1s", escolha);
 
-        // Switch para selecionar a opÃ§Ã£oo
+        // Switch para selecionar a opção
         switch (escolha[0]) {
             case '1':
                 if(remove("atividades.txt") == 0){
@@ -57,11 +56,12 @@ void apagar(){
                 sleep(1);  // pausa de 1 segundos
                 return ;
             default:
-                printf("%s" ,red("OpÃ§Ã£o invalida\n"));
+                printf("%s" ,red("Opção invalida\n"));
                 sleep(1);  // pausa de 1 segundos
                 return;
         }
-    }else{
+    } else {
         printf("%s\n", red("Senha incorreta"));
+        sleep(1);
     }
 }

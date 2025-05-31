@@ -1,4 +1,4 @@
-void escreverDesafioLinguagem() {
+void EscreverDesafioLinguagem() {
     //limpar cmd
     system("cls");
 
@@ -18,9 +18,9 @@ void escreverDesafioLinguagem() {
     }
 
     //logica
-    printf("Quantas linguagens de programa√ß√£o e ferramentas ser√£o adicionadas: ");
+    printf("Quantas linguagens de programaÁ„o e ferramentas ser„o adicionadas: ");
     while(scanf("%d", &quantidade) != 1){
-        printf("Quantas linguagens de programa√ß√£o e ferramentas ser√£o adicionadas: ");
+        printf("Quantas linguagens de programaÁ„o e ferramentas ser„o adicionadas: ");
         while(getchar() != '\n'); //limpar buffer
     }
 
@@ -41,7 +41,7 @@ void escreverDesafioLinguagem() {
 
 }
 
-void mostrarDesafioLinguagem(){
+void MostrarDesafioLinguagem(){
     //limpar cmd
     system("cls");
 
@@ -68,7 +68,7 @@ void mostrarDesafioLinguagem(){
     fclose (file);
 }
 
-void sortearDesafioLinguagem(){
+void SortearDesafioLinguagem(){
     setlocale(LC_ALL, "Portuguese");
 
     //variaveis
@@ -78,8 +78,8 @@ void sortearDesafioLinguagem(){
 
     srand(time(NULL));
 
-    // N√≠veis pr√©-definidos
-    char *nivel[] = {"B√°sico", "M√©dio", "Avan√ßado"};
+    // NÌveis prÈ-definidos
+    char *nivel[] = {"B·sico", "MÈdio", "AvanÁado"};
     int tamanhoNivel = sizeof(nivel) / sizeof(nivel[0]);
 
     // Abrir o arquivo com as linguagens
@@ -94,7 +94,7 @@ void sortearDesafioLinguagem(){
         // Remover o '\n' do final
         linha[strcspn(linha, "\n")] = '\0';
 
-        // Alocar mem√≥ria e copiar a linha para o array
+        // Alocar memÛria e copiar a linha para o array
         linguagens[contador] = malloc(strlen(linha) + 1);
         strcpy(linguagens[contador], linha);
         contador++;
@@ -113,43 +113,42 @@ void sortearDesafioLinguagem(){
     int indice = rand() % contador;
     int indiceNivel = rand() % tamanhoNivel;
 
-    printf("Item sorteado: %s\nN√≠vel: %s\n", linguagens[indice], nivel[indiceNivel]);
+    printf("Item sorteado: %s\nNÌvel: %s\n", linguagens[indice], nivel[indiceNivel]);
 
-    // Liberar mem√≥ria
+    // Liberar memÛria
     for (int i = 0; i < contador; i++) {
         free(linguagens[i]);
     }
 }
 
-void menuDesafioLinguagem(){
+void MenuDesafioLinguagem(){
     //limpar cmd
     system("cls");
 
     char esc;
     while (1) {
-        printf("%s",blue("Mensagem:\nTudo ja pronto:\n"));
-        printf("\nMENU\n\t1. Escrever novas linguagens\n\t2. Mostrar todas as linguagens e ferramentas\n\t3. Remover linguagem\n\t4. Sortear atividade\n\t5. Sair\nOp√ß√£o: ");
+        printf("\nMENU\n\t1. Escrever novas linguagens\n\t2. Mostrar todas as linguagens e ferramentas\n\t3. Remover linguagem\n\t4. Sortear atividade\n\t5. Sair\nOpÁ„o: ");
         scanf(" %c", &esc);
 
         switch (esc) {
             case '1':
-                escreverDesafioLinguagem();
+                EscreverDesafioLinguagem();
                 break;
             case '2':
-                mostrarDesafioLinguagem();
+                MostrarDesafioLinguagem();
                 break;
             case '3':
                 remover_linha("desafiolinguagem.txt");
                 break;
             case '4':
-                sortearDesafioLinguagem();
+                SortearDesafioLinguagem();
                 break;
             case '5':
                 printf("%s\n", blue("Saindo do programa..."));
                 sleep(1);  // pausa de 2 segundos
                 return;//sair
             default:
-                printf("%s\n", red("Op√ß√£o invalida. Tente novamente."));
+                printf("%s\n", red("OpÁ„o invalida. Tente novamente."));
                 sleep(1);  // pausa de 2 segundos
                 break;
         }

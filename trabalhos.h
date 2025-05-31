@@ -10,7 +10,7 @@ void trabalho() {
     char dia[1000];
 
     //entradas
-    printf("Digite a matÃ©ria do seu trabalho:\n");
+    printf("Digite a matéria do seu trabalho:\n");
     fflush(stdin);//limpar buffer
     fgets(trabalho_materia, sizeof(trabalho_materia), stdin);
     trabalho_materia[strcspn(trabalho_materia, "\n")] = 0; //remove o \n
@@ -19,7 +19,7 @@ void trabalho() {
     fgets(trabalho_tipo, sizeof(trabalho_tipo), stdin);
     trabalho_tipo[strcspn(trabalho_tipo, "\n")] = 0; //remove o \n
 
-    printf("Digite qual Ã© o assunto do seu trabalho:\n");
+    printf("Digite qual é o assunto do seu trabalho:\n");
     fgets(trabalho, sizeof(trabalho), stdin);
     trabalho[strcspn(trabalho, "\n")] = 0; //remove o \n
 
@@ -83,7 +83,7 @@ void menu_trabalho(){
     while (1) {
         printf("%s",blue("Mensagem:\nTudo ja pronto:\n"));
     	printf("\n==========MENU DO TRABALHO==========");
-        printf("\nMENU\n\t1. Escrever novo trabalho\n\t2. Mostrar todos os trabalhos\n\t3. Remover trabalho\n\t4. Sair\nOpÃ§Ã£o: ");
+        printf("\nMENU\n\t1. Escrever novo trabalho\n\t2. Mostrar todos os trabalhos\n\t3. Remover trabalho\n\t4. Sair\nOpção: ");
         scanf(" %c", &esc);
         printf("\n====================================\n");
 
@@ -102,7 +102,7 @@ void menu_trabalho(){
                 sleep(1);  // pausa de 2 segundos
                 return;
             default:
-                printf("%s\n", red("OpÃ§Ã£o invalida. Tente novamente."));
+                printf("%s\n", red("Opção invalida. Tente novamente."));
                 sleep(1);  // pausa de 2 segundos
                 break;
         }
