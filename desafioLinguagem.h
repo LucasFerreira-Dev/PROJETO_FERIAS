@@ -38,7 +38,6 @@ void EscreverDesafioLinguagem() {
     //fechar o arquivo
     fclose(file);
     printf("Linguagens salva com sucesso!\n");
-
 }
 
 void MostrarDesafioLinguagem(){
@@ -78,7 +77,7 @@ void SortearDesafioLinguagem(){
 
     srand(time(NULL));
 
-    // Níveis pré-definidos
+    // Niveis pré-definidos
     char *nivel[] = {"Básico", "Médio", "Avançado"};
     int tamanhoNivel = sizeof(nivel) / sizeof(nivel[0]);
 
@@ -94,7 +93,7 @@ void SortearDesafioLinguagem(){
         // Remover o '\n' do final
         linha[strcspn(linha, "\n")] = '\0';
 
-        // Alocar memória e copiar a linha para o array
+        // Alocar meméria e copiar a linha para o array
         linguagens[contador] = malloc(strlen(linha) + 1);
         strcpy(linguagens[contador], linha);
         contador++;
@@ -115,7 +114,7 @@ void SortearDesafioLinguagem(){
 
     printf("Item sorteado: %s\nNível: %s\n", linguagens[indice], nivel[indiceNivel]);
 
-    // Liberar memória
+    // Liberar meméria
     for (int i = 0; i < contador; i++) {
         free(linguagens[i]);
     }

@@ -1,4 +1,4 @@
-//fuções de projetos
+//funções de projetos
 void EscreverProjeto() {
     //limpar cmd
     system("cls");
@@ -15,7 +15,7 @@ void EscreverProjeto() {
     fgets(lider, sizeof(lider), stdin);
     lider[strcspn(lider, "\n")] = 0; //remove o \n
 
-    printf("Digite qual é a materia do projeto:\n");
+    printf("Digite qual é a matéria do projeto:\n");
     fgets(materia, sizeof(materia), stdin);
     materia[strcspn(materia, "\n")] = 0; //remove o \n
 

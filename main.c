@@ -59,7 +59,7 @@ int main() {
         printf("\n\t2. %s", blue("Trabalhos"));
         printf("\n\t3. %s", blue("Projetos"));
         printf("\n\t4. %s", blue("Provas"));
-        printf("\n\t5. %s", red("Vou reorganizar ou refazer"));
+        printf("\n\t5. %s", yellow("Mostrar tudo salvo"));
         printf("\n\t6. %s", blue("Apagar arquivo"));
         printf("\n\t7. %s", red("Salvar e recuperar backup"));
         printf("\n\t8. %s", blue("Sortear uma atividade de treino"));
@@ -85,7 +85,7 @@ int main() {
                 MenuProva();
                 break;
             case '5':
-                mostrar_tudo();
+                MostrarTudoSalvo();
                 break;
             case '6':
                 Apagar();

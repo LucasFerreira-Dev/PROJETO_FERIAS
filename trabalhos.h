@@ -1,4 +1,4 @@
-// funcoes de trabalhos
+// funções de trabalhos
 void trabalho() {
     //limpar cmd
     system("cls");
@@ -38,7 +38,7 @@ void trabalho() {
     }
 
     //salvar no arquivo
-    fprintf(file, "Materia: %s. Tipo: %s. Assunto: %s. Data de entrega: %s\n",trabalho_materia, trabalho_tipo, trabalho, dia);
+    fprintf(file, "Matéria: %s. Tipo: %s. Assunto: %s. Data de entrega: %s\n",trabalho_materia, trabalho_tipo, trabalho, dia);
 
     //fechar arquivo
     fclose(file);
@@ -81,7 +81,6 @@ void menu_trabalho(){
     char esc;
 
     while (1) {
-        printf("%s",blue("Mensagem:\nTudo ja pronto:\n"));
     	printf("\n==========MENU DO TRABALHO==========");
         printf("\nMENU\n\t1. Escrever novo trabalho\n\t2. Mostrar todos os trabalhos\n\t3. Remover trabalho\n\t4. Sair\nOpção: ");
         scanf(" %c", &esc);

@@ -39,7 +39,7 @@ void EscreverProva() {
         fgets(tipoProva, sizeof(tipoProva), stdin);
         tipoProva[strcspn(tipoProva, "\n")] = 0; // Remove o '\n'
 
-        printf("Digite a materia da sua prova: ");
+        printf("Digite a matéria da sua prova: ");
         fgets(materia, sizeof(materia), stdin);
         materia[strcspn(materia, "\n")] = 0; // Remove o '\n'
 
@@ -52,7 +52,7 @@ void EscreverProva() {
         entrega[strcspn(entrega, "\n")] = 0; // Remove o '\n'
 
         //salvar no arquivo
-        fprintf(file, "Tipo: %s. Materia: %s. Local: %s. Dia: %s\n", tipoProva, materia, local, entrega);
+        fprintf(file, "Tipo: %s. Matéria: %s. Local: %s. Dia: %s\n", tipoProva, materia, local, entrega);
     }  
 
     //fechar o arquivo
@@ -92,7 +92,6 @@ void MenuProva() {
 
     char esc;
     while (1) {
-        printf("%s",blue("Mensagem:\nTudo ja pronto:\n"));
         printf("\nMENU\n\t1. Escrever nova prova\n\t2. Mostrar todas as provas\n\t3. Remover provas já feitas\n\t4. Sair\nOpção: ");
         scanf(" %c", &esc);
 

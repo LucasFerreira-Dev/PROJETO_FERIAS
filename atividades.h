@@ -1,4 +1,4 @@
-// Funções de atividades
+// Fun??es de atividades
 void EscreverAtividade() {
     //limpar cmd
     system("cls");

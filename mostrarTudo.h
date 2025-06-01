@@ -1,34 +1,34 @@
-void mostrar_tudo() {
+void MostrarTudoSalvo() {
     //limpar cmd
     system("cls");
 
-    //mensagem
-    printf("%s", yellow("Manutencao extrema\nVou refazer a logica de tudo aqui do inicio\n"));
-    sleep(2);
-    
     //variaveis
     char linha[200];
-    char deque[3][20] = {"ATIVIDADES","TRABALHOS", "PROJETOS"};
-    char tipo[3][20]= {"atividades.txt","trabalho.txt","projeto.txt"};
+    char deque[5][20] = {"ATIVIDADES","TRABALHOS", "PROJETOS", "PROVAS", "DESAFIOS"};
+    char local[5][20] = {"atividades.txt","trabalho.txt","projeto.txt","prova.txt","desafiolinguagem.txt"};
     int numero = 1;
 
-    for(int i = 0; i <= 3; i++){
-        //ponteiro
+    for(int i = 0; i < 5; i++){
         FILE *file;
-        file = fopen(tipo[i], "r");
+        file = fopen(local[i], "r");
 
         if (file == NULL) {
-            printf("Nenhum trabalho encontrada.\n");
-            return;
+            printf("Nenhum(a) %s encontrado(a).\n", deque[i]);
+            sleep(2);
+            continue;
         }
 
-        printf("\n============%s=============\n", deque[i]);
+        printf("===== %s =====\n", deque[i]);
         while (fgets(linha, sizeof(linha), file) != NULL) {
             printf("%d - %s", numero, linha);
             numero++;
         }
-        printf("\n==================================\n");
+        printf("======================\n");
 
-        fclose(file);
+        fclose (file);
     }
+    
+    printf("\nAtividades pendentes %d", numero - 1);
+    
+    sleep(4);
 }
