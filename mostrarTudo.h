@@ -5,7 +5,14 @@ void MostrarTudoSalvo() {
     //variaveis
     char linha[200];
     char deque[5][20] = {"ATIVIDADES","TRABALHOS", "PROJETOS", "PROVAS", "DESAFIOS"};
-    char local[5][20] = {"atividades.txt","trabalho.txt","projeto.txt","prova.txt","desafiolinguagem.txt"};
+    char local[5][40] = {
+        "output/atividades.txt",
+        "output/trabalho.txt",
+        "output/projeto.txt",
+        "output/prova.txt",
+        "output/desafiolinguagem.txt"
+    };
+    
     int numero = 1;
 
     for(int i = 0; i < 5; i++){

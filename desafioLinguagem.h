@@ -49,7 +49,7 @@ void MostrarDesafioLinguagem(){
     int numero = 1;
 
     //arquivo
-    FILE *file = fopen("", "r");
+    FILE *file = fopen("desafiolinguagem.txt", "r");
 
     //teste
     if (file == NULL) {

@@ -5,7 +5,9 @@ erros de portugues quebrado usar:ISO 8859-1
 🔹./main.exe
 
 acho que tem erros:
-5 mostrar tudo
+*tudo salva os arquivos.txt a pasta output mmanualmente para salvar eabrir.
+Exemplo ⬇️ 
+✅ "output/atividades.txt",
 
 vai refazer:
 7 salvar num arquivo
@@ -16,3 +18,6 @@ ja resolvidos:
                     printf("%s\n", blue("Saindo do programa..."));
                     sleep(1);  // pausa de 2 segundos
     3. corrigindo a chanse de bug no apagar.h
+
+✅ Ideias pra fazer ainda
+☣Quando for implementar IA impedir que o usuario crie muitas atividades, fazer um algoritmo que so permita denovo depois de 1miin ou 2 min.
