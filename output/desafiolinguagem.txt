@@ -1,4 +1,0 @@
-C
-python
-java
-javascript

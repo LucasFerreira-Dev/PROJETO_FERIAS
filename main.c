@@ -24,18 +24,18 @@ int main() {
     char escolha;
 
     /*
-        oração contra os males do nosso santo dia:
+        ora??o contra os males do nosso santo dia:
         
         Pai Nosso que estais no Ceus,
         Santificado seja o Vosso Console,
-        Venha a nós o Vosso Array,
+        Venha a n?s o Vosso Array,
         Seja feita a Vossa vontade
         Assim no backend como no front.
 
-        O código nosso de cada dia nos compile hoje,
-        Perdoai nossas exceções
-        Assim como nós tratamos quem nos deu bug,
-        E não vos deixei cair em deploy na sexta,
+        O c?digo nosso de cada dia nos compile hoje,
+        Perdoai nossas exce??es
+        Assim como n?s tratamos quem nos deu bug,
+        E n?o vos deixei cair em deploy na sexta,
         Mas livrai-nos do rollback.
 
         A main. ??
@@ -46,7 +46,7 @@ int main() {
         //limpar cmd
         system("cls");
 
-        printf("Configuração de cores para manutenções:\n");
+        printf("Configuração de cores para manuteções:\n");
         printf("%s\n", blue("Tudo certo"));
         printf("%s\n", yellow("Com problemas, precisa de manutenção"));
         printf("%s\n", red("Não pega e precisa refazer"));

@@ -18,17 +18,21 @@ void MostrarTudoSalvo() {
             continue;
         }
 
-        printf("===== %s =====\n", deque[i]);
+        printf("\n===== %s =====\n", deque[i]);
         while (fgets(linha, sizeof(linha), file) != NULL) {
             printf("%d - %s", numero, linha);
             numero++;
         }
         printf("======================\n");
 
+        if(i == 2){
+                printf("\nAtividades pendentes %d\n", numero - 1);
+        }
+
         fclose (file);
     }
     
-    printf("\nAtividades pendentes %d", numero - 1);
+    
     
     sleep(4);
 }
