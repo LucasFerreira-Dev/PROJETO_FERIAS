@@ -5,24 +5,31 @@ void MostrarTudoSalvo() {
     //variaveis
     char linha[200];
     char deque[5][20] = {"ATIVIDADES","TRABALHOS", "PROJETOS", "PROVAS", "DESAFIOS"};
-    char local[5][40] = {
+    char local[5][22] = {"atividades.txt","trabalho.txt","projeto.txt","prova.txt","desafiolinguagem.txt"};
+
+    char local_novo[5][40] = {
         "output/atividades.txt",
         "output/trabalho.txt",
         "output/projeto.txt",
         "output/prova.txt",
         "output/desafiolinguagem.txt"
     };
-    
+
     int numero = 1;
 
     for(int i = 0; i < 5; i++){
         FILE *file;
+
         file = fopen(local[i], "r");
 
-        if (file == NULL) {
-            printf("Nenhum(a) %s encontrado(a).\n", deque[i]);
-            sleep(2);
-            continue;
+        if(file == NULL) {
+            file = fopen(local_novo[i], "r");
+
+            if (file == NULL) {
+                printf("Nenhum(a) %s encontrado(a).\n", deque[i]);
+                sleep(2);
+                continue;
+            }
         }
 
         printf("\n===== %s =====\n", deque[i]);
@@ -38,8 +45,6 @@ void MostrarTudoSalvo() {
 
         fclose (file);
     }
-    
-    
-    
+     
     sleep(4);
 }
