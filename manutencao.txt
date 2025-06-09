@@ -5,9 +5,9 @@ erros de portugues quebrado usar:ISO 8859-1
 🔹./main.exe
 
 acho que tem erros:
-*tudo salva os arquivos.txt a pasta output mmanualmente para salvar eabrir.
+*tudo salva os arquivos.txt a pasta output mmanualmente para salvar reabrir.
 Exemplo ⬇️ 
-✅ "output/atividades.txt",
+✅ "output/atividades.txt", //fazer umja classe para testar isso na hora de abrir o arquivo.
 
 vai refazer:
 7 salvar num arquivo
