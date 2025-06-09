@@ -49,5 +49,4 @@ void MostrarTudoSalvo() {
     //controle fluquiso
     printf("Depois que ler, aperte enter para sair.");
     getchar(); // espera o Enter
-
 }

@@ -1,8 +1,12 @@
 erros de portugues quebrado usar:ISO 8859-1
 
 💥executar sem usar o botao já que parou de rodar no meu not antido, executar via terminal:
-🔹gcc main.c -o  main.exe
-🔹./main.exe
+🔹gcc main.c -o  main.exe 
+            ou 
+gcc main.c -o  output/main.exe
+🔹./main.exe 
+    ou 
+./output/main.exe
 
 acho que tem erros:
 *tudo salva os arquivos.txt a pasta output mmanualmente para salvar reabrir.

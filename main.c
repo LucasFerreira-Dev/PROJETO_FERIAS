@@ -46,10 +46,10 @@ int main() {
         //limpar cmd
         system("cls");
 
-        printf("Configuração de cores para manuteções:\n");
+        printf("Configuraï¿½ï¿½o de cores para manuteï¿½ï¿½es:\n");
         printf("%s\n", blue("Tudo certo"));
-        printf("%s\n", yellow("Com problemas, precisa de manutenção"));
-        printf("%s\n", red("Não pega e precisa refazer"));
+        printf("%s\n", yellow("Com problemas, precisa de manutenï¿½ï¿½o"));
+        printf("%s\n", red("Nï¿½o pega e precisa refazer"));
 
         //menu
         printf("\n==========%s==========", blue("PROJETO_FERIAS"));
@@ -59,7 +59,7 @@ int main() {
         printf("\n\t2. %s", blue("Trabalhos"));
         printf("\n\t3. %s", blue("Projetos"));
         printf("\n\t4. %s", blue("Provas"));
-        printf("\n\t5. %s", yellow("Mostrar tudo salvo"));
+        printf("\n\t5. %s", blue("Mostrar tudo salvo"));
         printf("\n\t6. %s", blue("Apagar arquivo"));
         printf("\n\t7. %s", red("Salvar e recuperar backup"));
         printf("\n\t8. %s", blue("Sortear uma atividade de treino"));
@@ -91,7 +91,7 @@ int main() {
                 Apagar();
                 break;
             case '7':
-                printf("%s", red("Simplismente não existe\nCom erro até o talo"));
+                printf("%s", red("Simplismente nï¿½o existe\nCom erro atï¿½ o talo"));
                 sleep(2);
                 break;
             case '8':
@@ -102,7 +102,7 @@ int main() {
                 sleep(1);  // pausa de 2 segundos
                 exit(0);
             default:
-                printf("%s\n", red("Opção invalida. Tente novamente."));
+                printf("%s\n", red("Opï¿½ï¿½o invalida. Tente novamente."));
                 sleep(1);  // pausa de 2 segundos
                 break;
         }
