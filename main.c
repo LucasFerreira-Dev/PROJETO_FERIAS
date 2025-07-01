@@ -26,24 +26,25 @@ int main() {
     //variaveis
     char escolha;
 
-    /*
-        Oração contra os males do nosso santo dia:
-        
-        Pai Nosso que estais no Ceus,
-        Santificado seja o Vosso Console,
-        Venha a nós o Vosso Array,
-        Seja feita a Vossa vontade
-        Assim no backend como no front.
+    void oracao() {
+        char enter[100];
 
-        O código nosso de cada dia nos compile hoje,
-        Perdoai nossas exceções
-        Assim como n?s tratamos quem nos deu bug,
-        E não vos deixei cair em deploy na sexta,
-        Mas livrai-nos do rollback.
+        printf("Oração contra os males do nosso santo dia:\n\n");
+        printf("Pai Nosso que estais nos Céus,\n");
+        printf("Santificado seja o Vosso Console,\n");
+        printf("Venha a nós o Vosso Array,\n");
+        printf("Seja feita a Vossa vontade\n");
+        printf("Assim no backend como no front.\n\n");
+        printf("O código nosso de cada dia nos compile hoje,\n");
+        printf("Perdoai nossas exceções\n");
+        printf("Assim como nós tratamos quem nos deu bug,\n");
+        printf("E não nos deixei cair em deploy na sexta,\n");
+        printf("Mas livrai-nos do rollback.\n\n");
+        printf("A main.\n");
 
-        A main.
-    */
-
+        printf("Aperte enter para voltar: ");
+        scanf("$s", enter);
+    } 
 
     while (1) {
         //limpar cmd
@@ -70,6 +71,9 @@ int main() {
         printf("\n==================================\n");
 
         switch (escolha) {
+            case '0':
+                oracao();
+                break;
             case '1':
                 MenuAtividade();
                 salvar(); //faz o salvamento de dados
