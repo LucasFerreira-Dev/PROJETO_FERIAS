@@ -1,3 +1,4 @@
+//bibliotecas
 #include <stdio.h>
 #include <locale.h>
 #include <string.h>
@@ -26,7 +27,7 @@ int main() {
     char escolha;
 
     /*
-        oraÃ§Ã£o contra os males do nosso santo dia:
+        oração contra os males do nosso santo dia:
         
         Pai Nosso que estais no Ceus,
         Santificado seja o Vosso Console,
@@ -34,13 +35,13 @@ int main() {
         Seja feita a Vossa vontade
         Assim no backend como no front.
 
-        O c?digo nosso de cada dia nos compile hoje,
-        Perdoai nossas exce??es
+        O código nosso de cada dia nos compile hoje,
+        Perdoai nossas exceções
         Assim como n?s tratamos quem nos deu bug,
-        E n?o vos deixei cair em deploy na sexta,
+        E não vos deixei cair em deploy na sexta,
         Mas livrai-nos do rollback.
 
-        A main. ??
+        A main.
     */
 
 
@@ -48,10 +49,10 @@ int main() {
         //limpar cmd
         system("cls");
 
-        printf("ConfiguraÃ§Ã£o de cores para manuteÃ§Ãµes:\n");
+        printf("Configuração de cores para manuteções:\n");
         printf("%s\n", blue("Tudo certo"));
-        printf("%s\n", yellow("Com problemas, precisa de manutenÃ§Ã£o"));
-        printf("%s\n", red("NÃ£o pega e precisa refazer"));
+        printf("%s\n", yellow("Com problemas, precisa de manutenção"));
+        printf("%s\n", red("Não pega e precisa refazer"));
 
         //menu
         printf("\n==========%s==========", blue("PROJETO_FERIAS"));
@@ -110,7 +111,7 @@ int main() {
                 sleep(1);  // pausa de 2 segundos
                 exit(0);
             default:
-                printf("%s\n", red("OpÃ§Ã£o invalida. Tente novamente."));
+                printf("%s\n", red("Opção invalida. Tente novamente."));
                 sleep(1);  // pausa de 2 segundos
                 break;
         }

@@ -41,7 +41,7 @@ void salvar() {
             }
         }
 
-        printf("Salvando as informaÃ§Ãµes\n");
+        printf("Salvando as informações\n");
         printf("\n===== %s =====\n", deque[i]);
         while (fgets(linha, sizeof(linha), file) != NULL) {
             printf("%d - %s", numero, linha);
@@ -81,13 +81,13 @@ void recuperar() {
     int numero = 1;
     char conteudo[1000] = ""; // para juntar tudo
 
-
-    printf("Escolha o arquivo que vocÃª deseja recuperar:\n");
+    //pergunta
+    printf("Escolha o arquivo que você deseja recuperar:\n");
     printf("\nArquivos\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Provas\n\t5. Arquivo do sorteio atividade\nEscolha: ");
     
-    scanf(" %c", &pergunta);  // Corrigido: adicionado '&'
+    scanf(" %c", &pergunta);  //entrada
 
-    switch (pergunta) {
+    switch (pergunta) { //controle
         case '1':
         strcat(deque, "ATIVIDADES");
             strcat(arquivo, "copy_atividades.txt");
@@ -114,14 +114,14 @@ void recuperar() {
             strcat(arquivoRecupera, "desafiolinguagem.txt");
             break;
         default:
-            printf("OpÃ§Ã£o invÃ¡lida\n");
+            printf("Opção inválida\n");
             return;
     }
 
     //abrir ponteiro
     FILE *file = fopen(arquivo, "r");
 
-    if (file == NULL) { //verficaÃ§Ã£o
+    if (file == NULL) { //verficação
         printf("Erro ao abrir arquivo, ou arquivo inexistente\n");
         exit(1);
     }

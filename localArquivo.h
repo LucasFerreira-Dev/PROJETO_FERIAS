@@ -1,6 +1,6 @@
 const char* Procurar_Arquivo(const char* arquivo, const char* nome_arquivo) {
     //variaveis
-    static char arquivo_procura[200];  // precisa ser static para n√£o sumir ap√≥s a fun√ß√£o retornar
+    static char arquivo_procura[200];  // precisa ser static para n„o sumir apÛs a funÁ„o retornar
 
     //iniciar ponteiro file
     FILE *file = fopen(arquivo, "r");

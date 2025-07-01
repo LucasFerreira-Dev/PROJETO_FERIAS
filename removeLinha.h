@@ -36,8 +36,8 @@ const char* remover_linha(const char* local) {
     printf("======================\n");
 
     //controle de arquivo, saber se ele possui algo para apagar
-    if (numero == 1) { // Arquivo est√° vazio
-        printf("O arquivo est√° vazio, nada para excluir.\n");
+    if (numero == 1) { // Arquivo est· vazio
+        printf("O arquivo est· vazio, nada para excluir.\n");
         fclose(file);
         fclose(temp);
         remove("temp.txt");
@@ -46,14 +46,14 @@ const char* remover_linha(const char* local) {
 
     rewind(file); // Volta para o inicio do arquivo
 
-    // Pergunta ao usu√°rio qual atividade excluir
-    printf("Digite o n√∫mero que voc√™ deseja excluir: ");
+    // Pergunta ao usu·rio qual atividade excluir
+    printf("Digite o n˙mero que vocÍ deseja excluir: ");
     scanf("%d", &excluir);
 
     numero = 1;
     while (fgets(linha, sizeof(linha), file) != NULL) {
         if (numero != excluir) {
-            fputs(linha, temp); // Copia todas as linhas, exceto a que ser√° excluida
+            fputs(linha, temp); // Copia todas as linhas, exceto a que ser· excluida
         }
         numero++;
     }

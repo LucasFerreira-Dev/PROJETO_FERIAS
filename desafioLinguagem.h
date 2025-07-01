@@ -18,9 +18,9 @@ void EscreverDesafioLinguagem() {
     }
 
     //logica
-    printf("Quantas linguagens de programaï¿½ï¿½o e ferramentas serï¿½o adicionadas: ");
+    printf("Quantas linguagens de programação e ferramentas serão adicionadas: ");
     while(scanf("%d", &quantidade) != 1){
-        printf("Quantas linguagens de programaï¿½ï¿½o e ferramentas serï¿½o adicionadas: ");
+        printf("Quantas linguagens de programação e ferramentas serão adicionadas: ");
         while(getchar() != '\n'); //limpar buffer
     }
 
@@ -77,8 +77,8 @@ void SortearDesafioLinguagem(){
 
     srand(time(NULL));
 
-    // Niveis prï¿½-definidos
-    char *nivel[] = {"Bï¿½sico", "Mï¿½dio", "Avanï¿½ado"};
+    // Niveis pr?-definidos
+    char *nivel[] = {"Básico", "Médio", "Avançado"};
     int tamanhoNivel = sizeof(nivel) / sizeof(nivel[0]);
 
     // Abrir o arquivo com as linguagens
@@ -93,7 +93,7 @@ void SortearDesafioLinguagem(){
         // Remover o '\n' do final
         linha[strcspn(linha, "\n")] = '\0';
 
-        // Alocar memï¿½ria e copiar a linha para o array
+        // Alocar mem?ria e copiar a linha para o array
         linguagens[contador] = malloc(strlen(linha) + 1);
         strcpy(linguagens[contador], linha);
         contador++;
@@ -112,9 +112,9 @@ void SortearDesafioLinguagem(){
     int indice = rand() % contador;
     int indiceNivel = rand() % tamanhoNivel;
 
-    printf("Item sorteado: %s\nNï¿½vel: %s\n", linguagens[indice], nivel[indiceNivel]);
+    printf("Item sorteado: %s\nNível: %s\n", linguagens[indice], nivel[indiceNivel]);
 
-    // Liberar memï¿½ria
+    // Liberar meméria
     for (int i = 0; i < contador; i++) {
         free(linguagens[i]);
     }
@@ -126,7 +126,7 @@ void MenuDesafioLinguagem(){
 
     char esc;
     while (1) {
-        printf("\nMENU\n\t1. Escrever novas linguagens\n\t2. Mostrar todas as linguagens e ferramentas\n\t3. Remover linguagem\n\t4. Sortear atividade\n\t5. Sair\nOpï¿½ï¿½o: ");
+        printf("\nMENU\n\t1. Escrever novas linguagens\n\t2. Mostrar todas as linguagens e ferramentas\n\t3. Remover linguagem\n\t4. Sortear atividade\n\t5. Sair\nOpção: ");
         scanf(" %c", &esc);
 
         switch (esc) {
@@ -147,7 +147,7 @@ void MenuDesafioLinguagem(){
                 sleep(1);  // pausa de 2 segundos
                 return;//sair
             default:
-                printf("%s\n", red("Opï¿½ï¿½o invalida. Tente novamente."));
+                printf("%s\n", red("Opção invalida. Tente novamente."));
                 sleep(1);  // pausa de 2 segundos
                 break;
         }
