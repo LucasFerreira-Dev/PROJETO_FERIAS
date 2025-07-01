@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
 
 //chamar arquivos
 #include "maiusculoMinusculo.h"
@@ -15,6 +16,7 @@
 #include "mostrarTudo.h"
 #include "apagar.h"
 #include "desafioLinguagem.h"
+#include "salvarRecuperar.h"
 
 int main() {
     //lingua
@@ -24,7 +26,7 @@ int main() {
     char escolha;
 
     /*
-        ora??o contra os males do nosso santo dia:
+        oração contra os males do nosso santo dia:
         
         Pai Nosso que estais no Ceus,
         Santificado seja o Vosso Console,
@@ -46,10 +48,10 @@ int main() {
         //limpar cmd
         system("cls");
 
-        printf("Configura��o de cores para manute��es:\n");
+        printf("Configuração de cores para manuteções:\n");
         printf("%s\n", blue("Tudo certo"));
-        printf("%s\n", yellow("Com problemas, precisa de manuten��o"));
-        printf("%s\n", red("N�o pega e precisa refazer"));
+        printf("%s\n", yellow("Com problemas, precisa de manutenção"));
+        printf("%s\n", red("Não pega e precisa refazer"));
 
         //menu
         printf("\n==========%s==========", blue("PROJETO_FERIAS"));
@@ -74,35 +76,41 @@ int main() {
         switch (escolha) {
             case '1':
                 MenuAtividade();
+                salvar(); //faz o salvamento de dados
                 break;
             case '2':
                 menu_trabalho();
+                salvar(); //faz o salvamento de dados
                 break;
             case '3':
                 MenuProjeto();
+                salvar(); //faz o salvamento de dados
                 break;
             case '4':
                 MenuProva();
+                salvar(); //faz o salvamento de dados
                 break;
             case '5':
                 MostrarTudoSalvo();
+                salvar(); //faz o salvamento de dados
                 break;
             case '6':
                 Apagar();
                 break;
             case '7':
-                printf("%s", red("Simplismente n�o existe\nCom erro at� o talo"));
+                recuperar();
                 sleep(2);
                 break;
             case '8':
                 MenuDesafioLinguagem();
+                salvar(); //faz o salvamento de dados
                 break;
             case '9':
                 printf("%s\n", blue("Saindo do programa..."));
                 sleep(1);  // pausa de 2 segundos
                 exit(0);
             default:
-                printf("%s\n", red("Op��o invalida. Tente novamente."));
+                printf("%s\n", red("Opção invalida. Tente novamente."));
                 sleep(1);  // pausa de 2 segundos
                 break;
         }

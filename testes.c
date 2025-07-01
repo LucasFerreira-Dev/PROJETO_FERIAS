@@ -1,0 +1,169 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+void salvar() {
+    //limpar cmd
+    system("cls");
+
+    //variaveis
+    char linha[1000];
+    char deque[5][20] = {"ATIVIDADES","TRABALHOS", "PROJETOS", "PROVAS", "DESAFIOS"};
+
+    //controle do arquivo
+    char local[5][22] = {"atividades.txt","trabalho.txt","projeto.txt","prova.txt","desafiolinguagem.txt"};
+    char local_novo[5][40] = {
+        "output/atividades.txt",
+        "output/trabalho.txt",
+        "output/projeto.txt",
+        "output/prova.txt",
+        "output/desafiolinguagem.txt"
+    };
+
+    //controle do arquivo
+        char tipo[] = "r";
+        bool erro = false; //controle em que array de char ele esta
+        int numero = 1;
+
+    for(int i = 0; i < 5; i++){
+        //variaveis de controle de arquivo
+        char conteudo[1000] = ""; // para juntar tudo
+        char localCopy[1000] = "copy_";
+
+        FILE *file;
+        
+        file = fopen(local[i], tipo);
+
+        if(file == NULL) {
+            erro = true;
+            file = fopen(local_novo[i], tipo);
+
+            if (file == NULL) {
+                printf("Nenhum(a) %s encontrado(a).\n", deque[i]);
+                sleep(2);
+                continue;
+            }
+        }
+
+        printf("\n===== %s =====\n", deque[i]);
+        while (fgets(linha, sizeof(linha), file) != NULL) {
+            printf("%d - %s", numero, linha);
+            strcat(conteudo, linha); // adiciona ao buffer final
+            numero++;
+        }
+        printf("======================\n");
+        
+        fclose(file);//fechar ponteiro antes de reabrir
+
+        if (erro == true) {
+            strcat(localCopy,local_novo[i]);
+        } else {
+            strcat(localCopy,local[i]);
+        }
+
+        file = fopen(localCopy, "w");
+	
+        if(file == NULL){
+            printf("Erro ao abrir o arquivo.\n");
+            exit(1);
+        }
+        
+        fprintf(file,"%s",conteudo); //salvar no arquivo
+
+        //fechar ponteiro
+        fclose (file);
+    }
+}
+
+void recuperar() {
+    char pergunta;
+    char arquivo[100] = "";
+    char arquivoRecupera[100] = "";
+    char linha[100];
+    char deque[100] = "";
+    int numero = 1;
+    char conteudo[1000] = ""; // para juntar tudo
+
+
+    printf("Escolha o arquivo que você deseja recuperar:\n");
+    printf("\nArquivos\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Provas\n\t5. Arquivo do sorteio atividade\nEscolha: ");
+    
+    scanf(" %c", &pergunta);  // Corrigido: adicionado '&'
+
+    switch (pergunta) {
+        case '1':
+        strcat(deque, "ATIVIDADES");
+            strcat(arquivo, "copy_atividades.txt");
+            strcat(arquivoRecupera, "atividades.txt");
+            break;
+        case '2':
+            strcat(deque, "TRABALHOS");
+            strcat(arquivo, "copy_trabalho.txt");
+            strcat(arquivoRecupera, "trabalho.txt");
+            break;
+        case '3':
+            strcat(deque, "PROJETOS");
+            strcat(arquivo, "copy_projeto.txt");
+            strcat(arquivoRecupera, "projeto.txt");
+            break;
+        case '4':
+            strcat(deque, "PROVAS");
+            strcat(arquivo, "copy_prova.txt");
+            strcat(arquivoRecupera, "prova.txt");
+            break;
+        case '5':
+            strcat(deque, "DESAFIOS");
+            strcat(arquivo, "copy_desafiolinguagem.txt");
+            strcat(arquivoRecupera, "desafiolinguagem.txt");
+            break;
+        default:
+            printf("Opção inválida\n");
+            return;
+    }
+
+    //abrir ponteiro
+    FILE *file = fopen(arquivo, "r");
+
+    if (file == NULL) { //verficação
+        printf("Erro ao abrir arquivo, ou arquivo inexistente\n");
+        exit(1);
+    }
+
+    //vai pergar o que tiver e mostrar
+    printf("\n===== %s =====\n", deque);
+    while (fgets(linha, sizeof(linha), file) != NULL) {
+        printf("%d - %s", numero, linha);
+        strcat(conteudo, linha); // adiciona ao buffer final
+        numero++;
+    }
+    printf("======================\n");
+        
+    fclose(file);//fechar ponteiro antes de reabrir
+
+
+    file = fopen(arquivoRecupera, "w");
+	
+    if(file == NULL){
+        printf("Erro ao abrir o arquivo.\n");
+        exit(1);
+    }
+        
+    fprintf(file,"%s",conteudo); //salvar no arquivo
+
+    if (ferror(file)) {
+        printf("Erro ao escrever no arquivo!\n");
+    } else {
+        printf("Arquivo recuperado e salvo com sucesso!\n");
+    }
+
+    //fechar ponteiro
+    fclose (file);
+}
+
+int main() {
+    //salvar();
+    recuperar();
+
+    return 0;
+}
