@@ -3,6 +3,7 @@ void salvar() {
     system("cls");
 
     //variaveis
+    bool mensagem = true;
     char linha[1000];
     char deque[5][20] = {"ATIVIDADES","TRABALHOS", "PROJETOS", "PROVAS", "DESAFIOS"};
 
@@ -41,7 +42,11 @@ void salvar() {
             }
         }
 
-        printf("Salvando as informações\n");
+        if(mensagem){
+            printf("Salvando as informações\n");
+            mensagem = false;
+        }
+
         printf("\n===== %s =====\n", deque[i]);
         while (fgets(linha, sizeof(linha), file) != NULL) {
             printf("%d - %s", numero, linha);
@@ -62,7 +67,7 @@ void salvar() {
 	
         if(file == NULL){
             printf("Erro ao abrir o arquivo.\n");
-            exit(1);
+            continue;
         }
         
         fprintf(file,"%s",conteudo); //salvar no arquivo

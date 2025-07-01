@@ -27,11 +27,11 @@ int main() {
     char escolha;
 
     /*
-        oração contra os males do nosso santo dia:
+        Oração contra os males do nosso santo dia:
         
         Pai Nosso que estais no Ceus,
         Santificado seja o Vosso Console,
-        Venha a n?s o Vosso Array,
+        Venha a nós o Vosso Array,
         Seja feita a Vossa vontade
         Assim no backend como no front.
 
@@ -49,23 +49,18 @@ int main() {
         //limpar cmd
         system("cls");
 
-        printf("Configuração de cores para manuteções:\n");
-        printf("%s\n", blue("Tudo certo"));
-        printf("%s\n", yellow("Com problemas, precisa de manutenção"));
-        printf("%s\n", red("Não pega e precisa refazer"));
-
         //menu
         printf("\n==========%s==========", blue("PROJETO_FERIAS"));
-
+        
         printf("\nMENU PRINCIPAL");
-        printf("\n\t1. %s", blue("Atividades"));
-        printf("\n\t2. %s", blue("Trabalhos"));
-        printf("\n\t3. %s", blue("Projetos"));
-        printf("\n\t4. %s", blue("Provas"));
-        printf("\n\t5. %s", blue("Mostrar tudo salvo"));
-        printf("\n\t6. %s", blue("Apagar arquivo"));
-        printf("\n\t7. %s", red("Salvar e recuperar backup"));
-        printf("\n\t8. %s", blue("Sortear uma atividade de treino"));
+        printf("\n\t1. Atividades");
+        printf("\n\t2. Trabalhos");
+        printf("\n\t3. Projetos");
+        printf("\n\t4. Provas");
+        printf("\n\t5. Mostrar tudo salvo");
+        printf("\n\t6. Apagar arquivo");
+        printf("\n\t7. Salvar e recuperar backup");
+        printf("\n\t8. Sortear uma atividade de treino");
         printf("\n\t9. Sair");
         
         printf("\nEscolha: ");
@@ -93,7 +88,6 @@ int main() {
                 break;
             case '5':
                 MostrarTudoSalvo();
-                salvar(); //faz o salvamento de dados
                 break;
             case '6':
                 Apagar();
