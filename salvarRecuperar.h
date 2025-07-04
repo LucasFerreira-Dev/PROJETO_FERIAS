@@ -57,11 +57,11 @@ void salvar() {
         
         fclose(file);//fechar ponteiro antes de reabrir
 
-        if (erro == true) {
-            strcat(localCopy,local_novo[i]);
-        } else {
-            strcat(localCopy,local[i]);
-        }
+        // Corrige: pega só o nome do arquivo, sem caminho
+        const char *filename = strrchr(local[i], '/');
+        if (!filename) filename = strrchr(local[i], '\\');
+        filename = filename ? filename + 1 : local[i];
+        strcat(localCopy, filename);
 
         file = fopen(localCopy, "w");
 	
@@ -88,7 +88,7 @@ void recuperar() {
 
     //pergunta
     printf("Escolha o arquivo que você deseja recuperar:\n");
-    printf("\nArquivos\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Provas\n\t5. Arquivo do sorteio atividade\nEscolha: ");
+    printf("\nArquivos\n\t1. Atividades\n\t2. Trabalhos\n\t3. Projetos\n\t4. Provas\n\t5. Arquivo do sorteio atividade\n\t6. Voltar\nEscolha: ");
     
     scanf(" %c", &pergunta);  //entrada
 
@@ -117,6 +117,9 @@ void recuperar() {
             strcat(deque, "DESAFIOS");
             strcat(arquivo, "copy_desafiolinguagem.txt");
             strcat(arquivoRecupera, "desafiolinguagem.txt");
+            break;
+        case '6':
+            return;
             break;
         default:
             printf("Opção inválida\n");

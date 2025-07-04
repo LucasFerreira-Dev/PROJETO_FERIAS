@@ -43,7 +43,7 @@ int main() {
         printf("A main.\n");
 
         printf("Aperte enter para voltar: ");
-        scanf("$s", enter);
+        scanf("%s", enter);
     } 
 
     while (1) {
@@ -60,7 +60,7 @@ int main() {
         printf("\n\t4. Provas");
         printf("\n\t5. Mostrar tudo salvo");
         printf("\n\t6. Apagar arquivo");
-        printf("\n\t7. Salvar e recuperar backup");
+        printf("\n\t7. Recuperar backup");
         printf("\n\t8. Sortear uma atividade de treino");
         printf("\n\t9. Sair");
         
