@@ -11,10 +11,10 @@ gcc main.c -o  output/main.exe
 acho que tem erros:
 *tudo salva os arquivos.txt a pasta output mmanualmente para salvar reabrir.
 Exemplo ⬇️ 
-✅ "output/atividades.txt", //fazer umja classe para testar isso na hora de abrir o arquivo.
+✅ "output/atividades.txt", //fazer uma classe para testar isso na hora de abrir o arquivo. Não sendo tão importante agora
 
 vai refazer:
-7 salvar num arquivo
+...
 
 ja resolvidos:
     1. bugs de buffer no 4. provas e no 8. sortear atividades ✅
@@ -22,6 +22,8 @@ ja resolvidos:
                     printf("%s\n", blue("Saindo do programa..."));
                     sleep(1);  // pausa de 2 segundos
     3. corrigindo a chanse de bug no apagar.h
+    4. setor 7 salvar num arquivo de recuperacao
 
 ✅ Ideias pra fazer ainda
-☣Quando for implementar IA impedir que o usuario crie muitas atividades, fazer um algoritmo que so permita denovo depois de 1miin ou 2 min.
+1. ☣Quando for implementar IA impedir que o usuario crie muitas atividades, fazer um algoritmo que so permita denovo depois de 1miin ou 2 min.
+2. Usar uma biblioteca do linux para fazer a interface.
